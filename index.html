@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshini Visakai R K | International Business & Strategy Portfolio</title>
+  <meta name="description" content="Portfolio of Harshini Visakai R K - BBA International Business Student at Kumaraguru College of Liberal Arts and Science. Exploring global trade, business analytics, and strategic growth." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              accent: '#8b5cf6',
+              glow: '#a855f7'
+            }
+          },
+          animation: {
+            'blob': 'blob 7s infinite',
+            'blob-delayed': 'blob 7s infinite 2s',
+            'blob-slow': 'blob 10s infinite 4s',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #f3f4f6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+    .glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.35);
+      box-shadow: 0 15px 35px -5px rgba(99, 102, 241, 0.2);
+    }
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 40%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-bg {
+      position: absolute;
+      filter: blur(90px);
+      opacity: 0.45;
+      z-index: 0;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0f19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #312e81;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4f46e5;
+    }
+  </style>
+</head>
+<body class="relative selection:bg-brand-500 selection:text-white">
+
+  <!-- Ambient Glowing Blobs -->
+  <div class="glow-bg bg-brand-600 w-96 h-96 -top-20 -left-20 animate-blob"></div>
+  <div class="glow-bg bg-purple-600 w-96 h-96 top-1/4 -right-20 animate-blob-delayed"></div>
+  <div class="glow-bg bg-indigo-500 w-80 h-80 top-2/3 left-10 animate-blob-slow"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 transition-all duration-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-between glass-card px-6 py-3.5 rounded-full border border-white/10">
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-600 to-purple-500 flex items-center justify-center text-white font-display font-bold text-sm shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+          H
+        </div>
+        <span class="font-display font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-brand-300 transition-colors">
+          Harshini Visakai
+        </span>
+      </a>
+
+      <!-- Nav Links -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#bento-skills" class="hover:text-white transition-colors">Competencies</a>
+        <a href="#projects" class="hover:text-white transition-colors">Focus Areas</a>
+        <a href="#education" class="hover:text-white transition-colors">Academics</a>
+        <a href="#contact" class="hover:text-white transition-colors">Connect</a>
+      </div>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-3">
+        <a href="resume.html" class="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-gradient-to-r from-brand-500 to-brand-accent text-white shadow-md shadow-brand-500/25 hover:shadow-brand-500/40 hover:scale-105 transition-all duration-300">
+          <i class="fa-solid fa-file-invoice text-xs"></i>
+          <span>ATS Resume</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-20">
+
+    <!-- HERO SECTION (Glowing Blob Style) -->
+    <section id="hero" class="min-h-[80vh] flex flex-col justify-center items-center text-center relative py-12">
+      <!-- Status Badge -->
+      <div data-aos="fade-down" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill border-brand-500/30 text-brand-300 text-xs sm:text-sm font-medium mb-6 shadow-sm">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        BBA International Business • KCLAS
+      </div>
+
+      <!-- Profile Avatar with Graceful Fallback -->
+      <div data-aos="zoom-in" data-aos-delay="100" class="relative mb-6 group">
+        <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-500 via-purple-500 to-indigo-500 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-pulse-slow"></div>
+        <img 
+          src="https://ui-avatars.com/api/?name=Harshini+Visakai+R+K&background=6366f1&color=fff&size=256&bold=true&font-size=0.38" 
+          alt="Harshini Visakai R K" 
+          class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-white/20 shadow-2xl transition-transform duration-300 group-hover:scale-105"
+          onerror="this.src='https://ui-avatars.com/api/?name=H+V&background=4f46e5&color=fff&size=256'"
+        />
+      </div>
+
+      <!-- Hero Heading & Dynamic Typing -->
+      <h1 data-aos="fade-up" data-aos-delay="200" class="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold tracking-tight text-white mb-4">
+        Hi, I'm <span class="gradient-text">Harshini Visakai</span>
+      </h1>
+
+      <!-- Typed.js Role Subheading -->
+      <div data-aos="fade-up" data-aos-delay="300" class="text-lg sm:text-2xl text-gray-300 font-medium mb-6 h-10 flex items-center justify-center">
+        <span>Aspiring&nbsp;</span>
+        <span id="typed-roles" class="text-brand-300 font-semibold border-b-2 border-brand-500/50 pb-0.5"></span>
+      </div>
+
+      <!-- Short Bio -->
+      <p data-aos="fade-up" data-aos-delay="400" class="max-w-2xl text-gray-400 text-sm sm:text-base leading-relaxed mb-10">
+        Studying International Business at <span class="text-gray-200 font-medium">Kumaraguru College of Liberal Arts and Science</span>. Driven by global market dynamics, strategic business frameworks, data-driven decisions, and cross-cultural trade.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div data-aos="fade-up" data-aos-delay="500" class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#contact" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-lg shadow-brand-600/30 hover:shadow-brand-500/50 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Let's Connect</span>
+        </a>
+        <a href="resume.html" class="px-6 py-3 rounded-xl glass-card hover:bg-white/10 text-gray-200 font-semibold text-sm hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+          <i class="fa-solid fa-file-pdf text-brand-400"></i>
+          <span>View Resume</span>
+        </a>
+        <a href="https://github.com/Harshinivisakai" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl glass-card hover:bg-white/10 text-gray-300 hover:text-white transition-all duration-300" title="GitHub Profile">
+          <i class="fa-brands fa-github text-lg"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- BENTO GRID SECTION -->
+    <section id="about" class="pt-20 pb-12">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <h2 class="text-xs sm:text-sm font-semibold tracking-widest text-brand-400 uppercase mb-2">Portfolio Overview</h2>
+        <p class="text-3xl sm:text-4xl font-display font-bold text-white">The Bento Grid</p>
+      </div>
+
+      <!-- Bento Grid Container -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        
+        <!-- CARD 1: Core Story & Vision (Large 2 cols) -->
+        <div data-aos="fade-up" data-aos-delay="100" class="md:col-span-2 lg:col-span-2 glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-500/10 rounded-full blur-2xl group-hover:bg-brand-500/20 transition-all duration-500"></div>
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-400 border border-brand-500/30">
+                <i class="fa-solid fa-earth-americas text-lg"></i>
+              </div>
+              <div>
+                <span class="text-xs text-brand-400 font-semibold uppercase tracking-wider">Background & Vision</span>
+                <h3 class="text-xl font-display font-bold text-white">Global Business Mindset</h3>
+              </div>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Currently pursuing a Bachelor of Business Administration in International Business (BBA IB) at <strong class="text-white">Kumaraguru College of Liberal Arts and Science</strong>. I am passionate about understanding how global markets connect, how enterprises navigate cross-border trade, and how digital strategies empower modern businesses.
+            </p>
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+              Combining keen analytical skills with strategic thinking to craft impactful, sustainable business solutions for modern global commerce.
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-white/5 flex flex-wrap gap-2">
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-900/50 text-brand-200 border border-brand-700/50">#InternationalTrade</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-purple-900/50 text-purple-200 border border-purple-700/50">#BusinessStrategy</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-indigo-900/50 text-indigo-200 border border-indigo-700/50">#MarketResearch</span>
+          </div>
+        </div>
+
+        <!-- CARD 2: Current Focus / Academic Highlights -->
+        <div data-aos="fade-up" data-aos-delay="200" class="md:col-span-1 lg:col-span-2 glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 border border-purple-500/30">
+                <i class="fa-solid fa-graduation-cap text-lg"></i>
+              </div>
+              <div>
+                <span class="text-xs text-purple-400 font-semibold uppercase tracking-wider">Academic Pathway</span>
+                <h3 class="text-xl font-display font-bold text-white">BBA International Business</h3>
+              </div>
+            </div>
+            <div class="space-y-3 mt-4">
+              <div class="flex items-start gap-3 text-sm text-gray-300">
+                <i class="fa-solid fa-building-columns text-brand-400 mt-1 text-xs"></i>
+                <div>
+                  <div class="font-semibold text-white">Kumaraguru College of Liberal Arts and Science</div>
+                  <div class="text-xs text-gray-400">Coimbatore, Tamil Nadu • In Progress</div>
+                </div>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 text-xs text-gray-300 space-y-1.5">
+                <div class="font-medium text-brand-300 flex items-center gap-1.5">
+                  <i class="fa-solid fa-book-open"></i> Key Curriculum Focus:
+                </div>
+                <div class="text-gray-400">International Marketing • Export & Import Procedures • Financial Management • Business Analytics • Supply Chain & Logistics</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-white/5">
+            <span>Specialization: Global Commerce</span>
+            <span class="text-emerald-400 font-medium flex items-center gap-1">
+              <i class="fa-solid fa-circle-check text-[10px]"></i> Active Scholar
+            </span>
+          </div>
+        </div>
+
+        <!-- CARD 3: Core Competencies (Full-width / Multi-col) -->
+        <div id="bento-skills" data-aos="fade-up" data-aos-delay="300" class="md:col-span-3 lg:col-span-4 glass-card rounded-3xl p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-400 border border-brand-500/30">
+                <i class="fa-solid fa-chart-line text-lg"></i>
+              </div>
+              <div>
+                <span class="text-xs text-brand-400 font-semibold uppercase tracking-wider">Expertise Matrix</span>
+                <h3 class="text-xl font-display font-bold text-white">Core Skills & Competencies</h3>
+              </div>
+            </div>
+            <span class="text-xs text-gray-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/5 w-fit">
+              Tailored for Business & Management
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Skill Category 1 -->
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-brand-500/30 transition-colors">
+              <div class="flex items-center gap-2 text-brand-300 text-sm font-semibold mb-3">
+                <i class="fa-solid fa-globe text-xs"></i>
+                <span>Global Strategy</span>
+              </div>
+              <ul class="space-y-2 text-xs text-gray-300">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400 text-[10px]"></i> International Market Analysis</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400 text-[10px]"></i> Global Trade & Supply Chain</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400 text-[10px]"></i> Cross-Border Operations</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400 text-[10px]"></i> Business Development</li>
+              </ul>
+            </div>
+
+            <!-- Skill Category 2 -->
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-brand-500/30 transition-colors">
+              <div class="flex items-center gap-2 text-purple-300 text-sm font-semibold mb-3">
+                <i class="fa-solid fa-calculator text-xs"></i>
+                <span>Data & Analytics</span>
+              </div>
+              <ul class="space-y-2 text-xs text-gray-300">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-[10px]"></i> Advanced MS Excel & Sheets</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-[10px]"></i> Data Modeling & Analysis</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-[10px]"></i> Market Research Metrics</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-[10px]"></i> Business Intelligence (Basics)</li>
+              </ul>
+            </div>
+
+            <!-- Skill Category 3 -->
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-brand-500/30 transition-colors">
+              <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+                <i class="fa-solid fa-bullhorn text-xs"></i>
+                <span>Marketing & Media</span>
+              </div>
+              <ul class="space-y-2 text-xs text-gray-300">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-[10px]"></i> Digital Marketing Strategy</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-[10px]"></i> Consumer Behavior Studies</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-[10px]"></i> Pitch Decks & Presentations</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-[10px]"></i> Canva & Visual Content</li>
+              </ul>
+            </div>
+
+            <!-- Skill Category 4 -->
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-brand-500/30 transition-colors">
+              <div class="flex items-center gap-2 text-pink-300 text-sm font-semibold mb-3">
+                <i class="fa-solid fa-users-gear text-xs"></i>
+                <span>Leadership & Soft Skills</span>
+              </div>
+              <ul class="space-y-2 text-xs text-gray-300">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-400 text-[10px]"></i> Cross-Cultural Communication</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-400 text-[10px]"></i> Team Leadership & Synergy</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-400 text-[10px]"></i> Strategic Problem Solving</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-400 text-[10px]"></i> Project Management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Focus Projects & Academic Explorations (2 cols) -->
+        <div id="projects" data-aos="fade-up" data-aos-delay="400" class="md:col-span-2 lg:col-span-2 glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-400 border border-brand-500/30">
+                <i class="fa-solid fa-briefcase text-lg"></i>
+              </div>
+              <div>
+                <span class="text-xs text-brand-400 font-semibold uppercase tracking-wider">Applied Case Studies</span>
+                <h3 class="text-xl font-display font-bold text-white">Focus & Research Work</h3>
+              </div>
+            </div>
+
+            <div class="space-y-3 mt-4">
+              <!-- Project 1 -->
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-all">
+                <div class="flex items-center justify-between mb-1">
+                  <h4 class="text-sm font-semibold text-white">Global Market Entry Strategy Analysis</h4>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-brand-500/20 text-brand-300">Case Study</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                  Evaluated market penetration strategies, tariff considerations, and localization frameworks for consumer enterprises expanding across emerging Asian markets.
+                </p>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-all">
+                <div class="flex items-center justify-between mb-1">
+                  <h4 class="text-sm font-semibold text-white">International Supply Chain & Logistics Resilience</h4>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">Research</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                  Analyzed disruption mitigation models, multimodal freight networks, and digital tracking implementations for international trade routes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-white/5 text-xs text-gray-400 flex items-center justify-between">
+            <span>Academic & Exploratory Projects</span>
+            <span class="text-brand-300 font-medium">BBA Curriculum Insights →</span>
+          </div>
+        </div>
+
+        <!-- CARD 5: Tools & Digital Stack (1 col) -->
+        <div data-aos="fade-up" data-aos-delay="500" class="md:col-span-1 lg:col-span-1 glass-card rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 border border-indigo-500/30">
+                <i class="fa-solid fa-toolbox text-lg"></i>
+              </div>
+              <div>
+                <span class="text-xs text-indigo-400 font-semibold uppercase tracking-wider">Tech Toolkit</span>
+                <h3 class="text-base font-display font-bold text-white">Digital Tools</h3>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="text-xs px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-1.5 text-gray-200">
+                <i class="fa-solid fa-file-excel text-emerald-400"></i> MS Excel
+              </span>
+              <span class="text-xs px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-1.5 text-gray-200">
+                <i class="fa-solid fa-file-powerpoint text-amber-400"></i> PowerPoint
+              </span>
+              <span class="text-xs px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-1.5 text-gray-200">
+                <i class="fa-solid fa-palette text-blue-400"></i> Canva Pro
+              </span>
+              <span class="text-xs px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-1.5 text-gray-200">
+                <i class="fa-brands fa-google text-red-400"></i> Google Suite
+              </span>
+              <span class="text-xs px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-1.5 text-gray-200">
+                <i class="fa-brands fa-github text-white"></i> GitHub
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-gray-400">
+            Proficient in productivity and analytics software.
+          </div>
+        </div>
+
+        <!-- CARD 6: Interactive Connect & Quick Links (1 col) -->
+        <div id="contact" data-aos="fade-up" data-aos-delay="600" class="md:col-span-3 lg:col-span-1 glass-card rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 border border-emerald-500/30">
+                <i class="fa-solid fa-paper-plane text-lg"></i>
+              </div>
+              <div>
+                <span class="text-xs text-emerald-400 font-semibold uppercase tracking-wider">Get In Touch</span>
+                <h3 class="text-base font-display font-bold text-white">Connect</h3>
+              </div>
+            </div>
+
+            <p class="text-xs text-gray-400 mb-4">
+              Always eager to discuss international trade opportunities, strategic management, and academic collaborations.
+            </p>
+
+            <div class="space-y-2">
+              <a href="mailto:harshinivisakai77@gmail.com" class="w-full py-2 px-3 rounded-xl bg-brand-600/30 hover:bg-brand-600 text-brand-200 hover:text-white border border-brand-500/30 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email Harshini</span>
+              </a>
+              <button onclick="copyEmail()" id="copy-btn" class="w-full py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 text-xs font-medium border border-white/10 flex items-center justify-center gap-2 transition-all">
+                <i class="fa-regular fa-copy"></i>
+                <span id="copy-text">Copy Email Address</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-white/5 flex justify-center gap-4 text-gray-400">
+            <a href="https://github.com/Harshinivisakai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" title="GitHub">
+              <i class="fa-brands fa-github text-lg"></i>
+            </a>
+            <a href="mailto:harshinivisakai77@gmail.com" class="hover:text-brand-300 transition-colors" title="Direct Email">
+              <i class="fa-solid fa-envelope text-lg"></i>
+            </a>
+            <a href="resume.html" class="hover:text-purple-300 transition-colors" title="ATS Resume">
+              <i class="fa-solid fa-file-lines text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RESUME CALLOUT BANNER -->
+    <section data-aos="fade-up" class="my-16">
+      <div class="glass-card rounded-3xl p-8 sm:p-10 relative overflow-hidden border border-brand-500/30">
+        <div class="absolute right-0 top-0 w-80 h-80 bg-brand-600/20 rounded-full blur-3xl -z-0"></div>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 text-center md:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-semibold">
+              <i class="fa-solid fa-sparkles"></i> ATS Optimized
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-display font-bold text-white">Need a Formal Resume for Applications?</h3>
+            <p class="text-gray-300 text-sm max-w-xl">
+              Access the clean, recruiter-ready, ATS-compliant version formatted for easy 1-click printing or PDF export.
+            </p>
+          </div>
+          <a href="resume.html" class="px-6 py-3.5 rounded-2xl bg-white text-gray-950 hover:bg-gray-100 font-bold text-sm shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 shrink-0">
+            <i class="fa-solid fa-file-arrow-down text-brand-600"></i>
+            <span>Open ATS Resume</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/10 py-8 text-center text-xs text-gray-500">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold text-[10px]">H</div>
+        <span class="text-gray-300 font-semibold">Harshini Visakai R K</span>
+      </div>
+      <div>
+        Designed for Excellence • Kumaraguru College of Liberal Arts and Science
+      </div>
+      <div class="flex items-center gap-4 text-gray-400">
+        <a href="#hero" class="hover:text-white transition-colors">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50
+    });
+
+    // Initialize Typed.js for Hero Section
+    var typed = new Typed('#typed-roles', {
+      strings: [
+        'International Business Strategist',
+        'Global Market Analyst',
+        'Trade & Operations Enthusiast',
+        'Future Business Leader'
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2000,
+      loop: true
+    });
+
+    // Copy Email Toast Functionality
+    function copyEmail() {
+      const email = 'harshinivisakai77@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const copyText = document.getElementById('copy-text');
+        const copyBtn = document.getElementById('copy-btn');
+        copyText.innerText = 'Copied to Clipboard! ✓';
+        copyBtn.classList.add('bg-brand-600/40', 'text-white', 'border-brand-500/50');
+        setTimeout(() => {
+          copyText.innerText = 'Copy Email Address';
+          copyBtn.classList.remove('bg-brand-600/40', 'text-white', 'border-brand-500/50');
+        }, 2500);
+      });
+    }
+  </script>
+</body>
+</html>
