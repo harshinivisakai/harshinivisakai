@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 00: Chennai Retail Summit | Harshini Visakai</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              accent: '#8b5cf6',
+              glow: '#a855f7'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #f3f4f6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 40%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-bg {
+      position: absolute;
+      filter: blur(90px);
+      opacity: 0.45;
+      z-index: 0;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="relative selection:bg-brand-500 selection:text-white">
+
+  <!-- Ambient Glowing Blobs -->
+  <div class="glow-bg bg-brand-600 w-96 h-96 -top-20 -left-20 animate-pulse"></div>
+  <div class="glow-bg bg-purple-600 w-80 h-80 top-1/4 right-0 animate-pulse" style="animation-delay: 2s;"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 transition-all duration-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-between glass-card px-6 py-3.5 rounded-full border border-white/10">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white text-sm shadow-lg group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <span class="font-display font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-brand-300 transition-colors">
+          Back to Portfolio
+        </span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Blog Content Container -->
+  <main class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-20">
+    
+    <div class="glass-card rounded-3xl p-6 sm:p-10 border border-brand-500/30">
+      
+      <!-- Blog Header -->
+      <header class="text-center mb-10 border-b border-white/10 pb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-semibold mb-4">
+          PHASE 01 • WEEK 00
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+          Chennai Retail Summit
+        </h1>
+        <p class="text-gray-400 text-sm">PRICE ProtoSem Experience</p>
+      </header>
+
+      <!-- Image Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        <!-- Main Image -->
+        <div class="md:col-span-2 rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+          <img src="crs-1.jpg" alt="Chennai Retail Summit" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/800x400/111827/ffffff?text=Upload+crs-1.jpg'" />
+        </div>
+        <!-- Secondary Images -->
+        <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+          <img src="crs-2.jpg" alt="Networking at the Summit" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/400x300/111827/ffffff?text=Upload+crs-2.jpg'" />
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+          <img src="crs-3.jpg" alt="Travel and Connections" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/400x300/111827/ffffff?text=Upload+crs-3.jpg'" />
+        </div>
+      </div>
+
+      <!-- Blog Body -->
+      <article class="prose prose-invert prose-lg max-w-none text-gray-300 leading-relaxed font-sans">
+        <p>
+          Attending the Chennai Retail Summit was an enriching and insightful experience. I had the opportunity to meet and interact with several business professionals and industry experts, which helped me gain a better understanding of business structures, retail operations, and how businesses work in the real world. 
+        </p>
+        <p>
+          The event also gave me the chance to build meaningful connections with people from different backgrounds and learn from their experiences and perspectives. 
+        </p>
+        <p>
+          Overall, it was a great platform for learning, networking, and gaining practical exposure, and I’m grateful for the valuable insights and connections I gained from this experience.
+        </p>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/10 py-8 text-center text-xs text-gray-500">
+    <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-gray-300 font-semibold">Harshini Visakai R K</span>
+      </div>
+      <div>PRICE ProtoSem</div>
+    </div>
+  </footer>
+
+</body>
+</html>
