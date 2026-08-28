@@ -617,7 +617,7 @@
     protoSemWeeks.unshift({
       week: 0,
       phase: 1,
-      status: "COMING SOON",
+      status: "READ NOW",
       slug: "week-00"
     });
 
@@ -694,6 +694,11 @@
     }
 
     function handleProtoSemClick(slug) {
+      if (slug === 'week-00') {
+        window.location.href = 'week-00.html';
+        return;
+      }
+
       let toast = document.getElementById('protosem-toast');
       if (!toast) {
         toast = document.createElement('div');
