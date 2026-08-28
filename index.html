@@ -615,6 +615,13 @@
         slug: `week-${week.toString().padStart(2, '0')}`
       };
     });
+    // Add Week 0 to Phase 1
+    protoSemWeeks.unshift({
+      week: 0,
+      phase: 1,
+      status: "COMING SOON",
+      slug: "week-00"
+    });
 
     function renderTimeline(filter = 'all') {
       const container = document.getElementById('protosem-timeline');
