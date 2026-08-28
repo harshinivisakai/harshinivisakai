@@ -139,6 +139,7 @@
         <a href="#about" class="hover:text-white transition-colors">About</a>
         <a href="#bento-skills" class="hover:text-white transition-colors">Competencies</a>
         <a href="#projects" class="hover:text-white transition-colors">Focus Areas</a>
+        <a href="#protosem" class="hover:text-white transition-colors">ProtoSem</a>
         <a href="#education" class="hover:text-white transition-colors">Academics</a>
         <a href="#contact" class="hover:text-white transition-colors">Connect</a>
       </div>
@@ -487,6 +488,54 @@
       </div>
     </section>
 
+    <!-- PROTOSEM SECTION -->
+    <section id="protosem" class="pt-20 pb-12">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <h2 class="text-xs sm:text-sm font-semibold tracking-widest text-brand-400 uppercase mb-2">PRICE ProtoSem</h2>
+        <p class="text-3xl sm:text-4xl font-display font-bold text-white mb-4">Innovation Engineer Trainee</p>
+        <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+          Selected for a 20-week industry-integrated innovation programme focused on solving real-world retail and commerce challenges through AI, analytics, intelligent systems, IoT, prototyping, and entrepreneurship.<br><br>
+          Working with industry problem statements to explore, develop, and validate practical technology solutions beyond conventional classroom learning.
+        </p>
+        
+        <!-- Domain / Focus Tags -->
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <span class="px-4 py-2 rounded-full glass-pill text-xs font-medium text-brand-200 border-brand-500/30">Phygital Retail & Intelligent Commerce</span>
+          <span class="px-4 py-2 rounded-full glass-pill text-xs font-medium text-purple-200 border-purple-500/30">AI & Analytics</span>
+          <span class="px-4 py-2 rounded-full glass-pill text-xs font-medium text-indigo-200 border-indigo-500/30">Intelligent Systems & IoT</span>
+          <span class="px-4 py-2 rounded-full glass-pill text-xs font-medium text-emerald-200 border-emerald-500/30">Prototyping</span>
+          <span class="px-4 py-2 rounded-full glass-pill text-xs font-medium text-amber-200 border-amber-500/30">Entrepreneurship</span>
+        </div>
+      </div>
+
+      <!-- Phase Navigation -->
+      <div data-aos="fade-up" class="flex flex-wrap justify-center gap-2 mb-12" id="protosem-nav">
+        <button onclick="filterPhase('all')" class="phase-btn active px-5 py-2 rounded-full bg-brand-600 text-white text-xs font-bold transition-all">ALL</button>
+        <button onclick="filterPhase(1)" class="phase-btn px-5 py-2 rounded-full glass-pill text-gray-400 hover:text-white text-xs font-bold transition-all">PHASE 01</button>
+        <button onclick="filterPhase(2)" class="phase-btn px-5 py-2 rounded-full glass-pill text-gray-400 hover:text-white text-xs font-bold transition-all">PHASE 02</button>
+        <button onclick="filterPhase(3)" class="phase-btn px-5 py-2 rounded-full glass-pill text-gray-400 hover:text-white text-xs font-bold transition-all">PHASE 03</button>
+        <button onclick="filterPhase(4)" class="phase-btn px-5 py-2 rounded-full glass-pill text-gray-400 hover:text-white text-xs font-bold transition-all">PHASE 04</button>
+      </div>
+      
+      <!-- Programme Progress Visual -->
+      <div data-aos="fade-up" class="hidden sm:flex items-center justify-center gap-2 mb-12 text-xs font-bold text-gray-500">
+        <span>01</span>
+        <div class="h-px bg-gray-700 w-8"></div>
+        <span>05</span>
+        <div class="h-px bg-gray-700 w-8"></div>
+        <span>10</span>
+        <div class="h-px bg-gray-700 w-8"></div>
+        <span>15</span>
+        <div class="h-px bg-gray-700 w-8"></div>
+        <span>20</span>
+      </div>
+
+      <!-- Timeline Container -->
+      <div id="protosem-timeline" class="relative max-w-4xl mx-auto pl-6 sm:pl-0">
+        <!-- Cards injected by JS -->
+      </div>
+    </section>
+
     <!-- RESUME CALLOUT BANNER -->
     <section data-aos="fade-up" class="my-16">
       <div class="glass-card rounded-3xl p-8 sm:p-10 relative overflow-hidden border border-brand-500/30">
@@ -555,6 +604,119 @@
       backDelay: 2000,
       loop: true
     });
+    // ProtoSem Data & Logic
+    const protoSemWeeks = Array.from({ length: 20 }, (_, i) => {
+      const week = i + 1;
+      const phase = Math.ceil(week / 5);
+      return {
+        week,
+        phase,
+        status: "COMING SOON",
+        slug: `week-${week.toString().padStart(2, '0')}`
+      };
+    });
+
+    function renderTimeline(filter = 'all') {
+      const container = document.getElementById('protosem-timeline');
+      container.innerHTML = `
+        <div class="absolute left-6 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-500/50 via-purple-500/30 to-transparent -translate-x-1/2"></div>
+      `;
+
+      protoSemWeeks.forEach((item, index) => {
+        if (filter !== 'all' && item.phase !== filter) return;
+        
+        const isLeft = index % 2 === 0;
+        
+        const cardHTML = `
+          <div class="relative flex items-center justify-between md:justify-normal w-full mb-8 group cursor-pointer" onclick="handleProtoSemClick('${item.slug}')" data-aos="fade-up">
+            <!-- Timeline Node -->
+            <div class="absolute left-0 sm:left-1/2 w-4 h-4 rounded-full bg-gray-900 border-2 border-brand-500 shadow-[0_0_15px_rgba(99,102,241,0.5)] -translate-x-1/2 group-hover:scale-125 transition-transform z-10"></div>
+            
+            <!-- Desktop Layout -->
+            <div class="hidden sm:block w-5/12 ${isLeft ? 'pr-8 text-right' : 'pl-8 ml-auto text-left'}">
+              <div class="glass-card p-6 rounded-2xl group-hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                <div class="relative z-10">
+                  <div class="text-xs font-bold text-gray-500 mb-2 tracking-widest uppercase">Phase 0${item.phase}</div>
+                  <h4 class="text-2xl font-display font-bold text-white mb-1">WEEK ${item.week.toString().padStart(2, '0')}</h4>
+                  <div class="inline-block mt-2 px-3 py-1 rounded bg-white/5 border border-white/10 text-xs font-semibold text-brand-300">
+                    ${item.status}
+                  </div>
+                </div>
+                <!-- Hover Overlay text -->
+                <div class="absolute bottom-0 left-0 right-0 p-4 bg-brand-900/90 backdrop-blur-sm translate-y-full group-hover:translate-y-0 transition-transform flex items-center justify-center z-20">
+                  <span class="text-sm font-semibold text-brand-100">This is a future story / blog &rarr;</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="sm:hidden w-full pl-12">
+               <div class="glass-card p-5 rounded-2xl relative overflow-hidden group-hover:border-brand-500/50 transition-colors">
+                <div class="flex justify-between items-start mb-2">
+                  <h4 class="text-xl font-display font-bold text-white">WEEK ${item.week.toString().padStart(2, '0')}</h4>
+                  <span class="text-[10px] font-bold text-gray-500 uppercase">Phase 0${item.phase}</span>
+                </div>
+                <div class="inline-block px-2 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-semibold text-brand-300">
+                  ${item.status}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', cardHTML);
+      });
+      // Refresh AOS on dynamic content
+      if (typeof AOS !== 'undefined') AOS.refresh();
+    }
+
+    function filterPhase(phase) {
+      document.querySelectorAll('.phase-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-600', 'text-white');
+        btn.classList.add('glass-pill', 'text-gray-400');
+      });
+      
+      const activeBtn = phase === 'all' 
+        ? document.querySelector('.phase-btn:nth-child(1)')
+        : document.querySelector(`.phase-btn:nth-child(${phase + 1})`);
+        
+      if (activeBtn) {
+        activeBtn.classList.remove('glass-pill', 'text-gray-400');
+        activeBtn.classList.add('bg-brand-600', 'text-white');
+      }
+
+      renderTimeline(phase);
+    }
+
+    function handleProtoSemClick(slug) {
+      let toast = document.getElementById('protosem-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'protosem-toast';
+        toast.className = 'fixed bottom-5 right-5 glass-card px-6 py-4 rounded-xl border border-brand-500/50 shadow-2xl z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3';
+        toast.innerHTML = \`
+          <div class="w-8 h-8 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-white">Coming Soon</div>
+            <div class="text-xs text-gray-300">Field notes in progress.</div>
+          </div>
+        \`;
+        document.body.appendChild(toast);
+      }
+      
+      // Force reflow
+      void toast.offsetWidth;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    // Initialize Timeline
+    renderTimeline('all');
 
     // Copy Email Toast Functionality
     function copyEmail() {
