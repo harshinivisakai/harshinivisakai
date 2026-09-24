@@ -609,7 +609,7 @@
       return {
         week,
         phase,
-        status: "COMING SOON",
+        status: week === 1 ? "READ NOW" : "COMING SOON",
         slug: `week-${week.toString().padStart(2, '0')}`
       };
     });
@@ -650,7 +650,7 @@
                 </div>
                 <!-- Hover Overlay text -->
                 <div class="absolute bottom-0 left-0 right-0 p-4 bg-brand-900/90 backdrop-blur-sm translate-y-full group-hover:translate-y-0 transition-transform flex items-center justify-center z-20">
-                  <span class="text-sm font-semibold text-brand-100">This is a future story / blog &rarr;</span>
+                  <span class="text-sm font-semibold text-brand-100">${item.status === 'READ NOW' ? 'Read Week ' + item.week + ' Story &rarr;' : 'This is a future story / blog &rarr;'}</span>
                 </div>
               </div>
             </div>
@@ -696,6 +696,10 @@
     function handleProtoSemClick(slug) {
       if (slug === 'week-00') {
         window.location.href = 'week-00.html';
+        return;
+      }
+      if (slug === 'week-01') {
+        window.location.href = 'week-01.html';
         return;
       }
 
@@ -745,3 +749,4 @@
   </script>
 </body>
 </html>
+
