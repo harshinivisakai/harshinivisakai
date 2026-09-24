@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 01: From Curiosity to Problem-Solving | Harshini Visakai</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              accent: '#8b5cf6',
+              glow: '#a855f7'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #f3f4f6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.2);
+      transform: translateY(-2px);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 40%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-bg {
+      position: absolute;
+      filter: blur(90px);
+      opacity: 0.45;
+      z-index: 0;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .step-arrow {
+      color: #818cf8;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="relative selection:bg-brand-500 selection:text-white">
+
+  <!-- Ambient Glowing Blobs -->
+  <div class="glow-bg bg-brand-600 w-96 h-96 -top-20 -left-20 animate-pulse"></div>
+  <div class="glow-bg bg-purple-600 w-80 h-80 top-1/4 right-0 animate-pulse" style="animation-delay: 2s;"></div>
+  <div class="glow-bg bg-indigo-600 w-96 h-96 bottom-1/4 left-10 animate-pulse" style="animation-delay: 4s;"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 transition-all duration-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-between glass-card px-6 py-3.5 rounded-full border border-white/10">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white text-sm shadow-lg group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <span class="font-display font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-brand-300 transition-colors">
+          Back to Portfolio
+        </span>
+      </a>
+      <div class="text-xs font-semibold text-brand-300 bg-brand-500/10 px-3 py-1.5 rounded-full border border-brand-500/20">
+        WEEK 01
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Content Container -->
+  <main class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-20">
+    
+    <div class="glass-card rounded-3xl p-6 sm:p-10 border border-brand-500/30">
+      
+      <!-- Blog Header -->
+      <header class="text-center mb-12 border-b border-white/10 pb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/20 text-brand-300 text-xs font-bold mb-4 tracking-wider uppercase border border-brand-500/30">
+          <i class="fa-solid fa-compass text-brand-400"></i> PHASE 01 &bull; WEEK 01
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white mb-4 leading-tight tracking-tight">
+          WEEK 1 — <span class="gradient-text">FROM CURIOSITY TO PROBLEM-SOLVING</span>
+        </h1>
+        <p class="text-gray-400 text-base max-w-2xl mx-auto">
+          PRICE ProtoSem Journal &bull; Human-Centered Design Thinking, Pharmaceutical Industry Research & Digital Identity
+        </p>
+      </header>
+
+      <!-- Key Journey Stepper -->
+      <div class="glass-card rounded-2xl p-6 mb-12 border border-white/10 bg-white/[0.02]">
+        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-route text-brand-400"></i> Week 1 Evolution Overview
+        </h3>
+        <div class="flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-semibold text-gray-200">
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Learning Design Thinking</div>
+          <span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Understanding Industry</div>
+          <span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Mapping Ecosystem</div>
+          <span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Finding Problem Statements</div>
+          <span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Building Portfolio</div>
+        </div>
+      </div>
+
+      <!-- Article Body Section -->
+      <div class="space-y-12 text-gray-300 leading-relaxed font-sans">
+
+        <!-- Day 1 -->
+        <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-300 font-bold border border-brand-500/30">
+              01
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-400 tracking-wider uppercase">Day 1</span>
+              <h2 class="text-2xl font-display font-bold text-white">Learning to Think Like a Designer</h2>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-gray-300">
+            <h3 class="text-lg font-semibold text-white flex items-center gap-2">
+              <i class="fa-solid fa-lightbulb text-amber-400 text-sm"></i> Understanding Design Thinking
+            </h3>
+            <p>
+              Week 1 began with an insightful session by <strong>Lakshmi Vera Ma'am</strong> on the Design Thinking approach.
+            </p>
+            <p>
+              Before this session, I had heard the term <em>Design Thinking</em>, but I hadn't really understood how the entire process worked. The session introduced us to the five stages of Design Thinking:
+            </p>
+
+            <!-- 5 Stages Box -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 my-4 text-center">
+              <div class="p-3 rounded-xl bg-brand-900/40 border border-brand-500/30">
+                <div class="text-xs text-brand-300 font-bold">1. EMPATHIZE</div>
+              </div>
+              <div class="p-3 rounded-xl bg-brand-900/40 border border-brand-500/30">
+                <div class="text-xs text-brand-300 font-bold">2. DEFINE</div>
+              </div>
+              <div class="p-3 rounded-xl bg-brand-900/40 border border-brand-500/30">
+                <div class="text-xs text-brand-300 font-bold">3. IDEATE</div>
+              </div>
+              <div class="p-3 rounded-xl bg-brand-900/40 border border-brand-500/30">
+                <div class="text-xs text-brand-300 font-bold">4. PROTOTYPE</div>
+              </div>
+              <div class="p-3 rounded-xl bg-brand-900/40 border border-brand-500/30">
+                <div class="text-xs text-brand-300 font-bold">5. TEST</div>
+              </div>
+            </div>
+
+            <p>
+              What I found interesting was that the process doesn't begin with immediately finding a solution. <strong>It begins with understanding people.</strong>
+            </p>
+            <p>
+              We first need to empathize with the user, understand their actual problems, define the right problem, generate ideas, turn those ideas into prototypes, and finally test them with users.
+            </p>
+            <p>
+              This made me realise that a good solution isn't necessarily about having the most technically advanced idea. It is about solving the right problem for the right person.
+            </p>
+
+            <h3 class="text-lg font-semibold text-white pt-4 flex items-center gap-2">
+              <i class="fa-solid fa-cart-shopping text-purple-400 text-sm"></i> Discovering IDEO
+            </h3>
+            <p>
+              The session also introduced me to <strong>IDEO</strong>, a world-renowned design and innovation firm known for its human-centered approach to design.
+            </p>
+            <p>
+              I later watched their famous video on designing a shopping cart, and that was one of the key moments that stayed with me. What fascinated me wasn't just the final shopping cart design. It was the thought process behind it—how the team observed people, understood their needs, generated multiple possibilities, experimented with ideas, and gradually moved towards a solution.
+            </p>
+            <p>
+              It made me realise that innovation isn't always about one brilliant idea appearing suddenly. Sometimes, it is about observing, questioning, experimenting, failing, and trying again.
+            </p>
+
+            <h3 class="text-lg font-semibold text-white pt-4 flex items-center gap-2">
+              <i class="fa-solid fa-prescription-bottle-medical text-emerald-400 text-sm"></i> Choosing Our Industry — Pharmacy
+            </h3>
+            <p>
+              After understanding Design Thinking, we were asked to select an industry for our primary and secondary research. We discussed different possibilities, including consumer electronics, toys, and pharmaceuticals.
+            </p>
+            <p>
+              Eventually, our team chose the <strong>pharmaceutical industry</strong>. One reason was that we had a psychology student in our team, which gave us an opportunity to look at the industry from a behavioural perspective as well. Another reason was that pharmaceuticals are something almost everyone interacts with as a consumer at some point.
+            </p>
+            <p>
+              Personally, I was also influenced by the session with the Managing Director of <strong>Tulasi Pharmacy</strong> during Week 0. His journey and insights had already made me curious about the industry, so choosing pharmacy felt like a natural direction.
+            </p>
+
+            <h3 class="text-lg font-semibold text-white pt-4 flex items-center gap-2">
+              <i class="fa-solid fa-map-location-dot text-cyan-400 text-sm"></i> Mapping the Industry
+            </h3>
+            <p>
+              We started our secondary research by understanding the pharmaceutical market and how the industry has evolved over time. As part of this, we created a poster showing the evolution of the pharmaceutical industry and presented our findings.
+            </p>
+            <p>
+              It was interesting to move from simply knowing that an industry exists to actually understanding how it has developed, how it operates, and what forces have shaped it.
+            </p>
+          </div>
+
+          <div class="mt-6 p-4 rounded-xl bg-brand-500/10 border-l-4 border-brand-500 text-sm text-brand-200 font-medium">
+            <span class="font-bold text-white uppercase tracking-wider block mb-1">Day 1 Takeaway:</span>
+            "Design doesn't begin with a solution. It begins with understanding the person who needs one."
+          </div>
+        </section>
+
+        <!-- Day 2 -->
+        <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-300 font-bold border border-brand-500/30">
+              02
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-400 tracking-wider uppercase">Day 2</span>
+              <h2 class="text-2xl font-display font-bold text-white">Looking Beneath the Industry</h2>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-gray-300">
+            <h3 class="text-lg font-semibold text-white flex items-center gap-2">
+              <i class="fa-solid fa-diagram-project text-indigo-400 text-sm"></i> Understanding the Pharmaceutical Value Chain
+            </h3>
+            <p>
+              We continued our exploration of the pharmaceutical industry on Day 2. This time, we went beyond the basic market overview and started looking at the turnover, structure, and value chain of the industry.
+            </p>
+            <p>
+              Understanding the value chain helped me see how many different stages are involved before a medicine finally reaches a consumer. It isn't simply:
+            </p>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-center font-semibold text-brand-300 text-sm">
+              Medicine &rarr; Pharmacy &rarr; Consumer
+            </div>
+            <p>
+              There are multiple stakeholders and processes involved, from research and development, manufacturing, regulation, distribution, and wholesale to retail and the final consumer. Seeing this larger ecosystem helped us understand that a problem in one part of the chain can affect several others.
+            </p>
+
+            <h3 class="text-lg font-semibold text-white pt-4 flex items-center gap-2">
+              <i class="fa-solid fa-chart-pie text-rose-400 text-sm"></i> SWOT Analysis
+            </h3>
+            <p>
+              We conducted a comprehensive SWOT analysis of the pharmaceutical industry, examining its Strengths, Weaknesses, Opportunities, and Threats. Rather than looking at pharmaceuticals only as a healthcare sector, we started looking at it as an industry with business, technological, behavioural, and consumer dimensions.
+            </p>
+
+            <h3 class="text-lg font-semibold text-white pt-4 flex items-center gap-2">
+              <i class="fa-solid fa-magnifying-glass text-amber-400 text-sm"></i> Finding the Problem
+            </h3>
+            <p>
+              The most important part was beginning to identify potential problem statements within the industry. Instead of immediately jumping to a solution, we started asking:
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-gray-300 pl-4">
+              <li>Where are the actual gaps?</li>
+              <li>Who is experiencing them?</li>
+              <li>Why do these problems exist?</li>
+            </ul>
+            <p>
+              This was where the Design Thinking approach from Day 1 started becoming practical. We weren't just learning a framework anymore. We were beginning to use it.
+            </p>
+          </div>
+
+          <div class="mt-6 p-4 rounded-xl bg-brand-500/10 border-l-4 border-brand-500 text-sm text-brand-200 font-medium">
+            <span class="font-bold text-white uppercase tracking-wider block mb-1">Day 2 Takeaway:</span>
+            "Understanding an industry means looking beyond its products and seeing the entire ecosystem behind them."
+          </div>
+        </section>
+
+        <!-- Day 3 -->
+        <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-300 font-bold border border-brand-500/30">
+              03
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-400 tracking-wider uppercase">Day 3</span>
+              <h2 class="text-2xl font-display font-bold text-white">A Working Holiday</h2>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-gray-300">
+            <p>
+              Wednesday was officially a holiday, but our work didn't completely stop. It became more of a <strong>working holiday</strong>, where we continued thinking about the research, discussions, and direction of our project.
+            </p>
+            <p>
+              It was a quieter day compared to the others, but it gave us time to process what we had learned and continue working towards the next stage.
+            </p>
+            <p>
+              Sometimes, progress isn't about a major activity. Sometimes, it is simply about giving an idea enough time to develop.
+            </p>
+          </div>
+
+          <div class="mt-6 p-4 rounded-xl bg-brand-500/10 border-l-4 border-brand-500 text-sm text-brand-200 font-medium">
+            <span class="font-bold text-white uppercase tracking-wider block mb-1">Day 3 Takeaway:</span>
+            "Not every productive day needs to look busy."
+          </div>
+        </section>
+
+        <!-- Day 4 -->
+        <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-300 font-bold border border-brand-500/30">
+              04
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-400 tracking-wider uppercase">Day 4</span>
+              <h2 class="text-2xl font-display font-bold text-white">Building My Digital Identity</h2>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-gray-300">
+            <p>
+              Thursday took us in a completely different direction. We started working on our portfolio and personal website.
+            </p>
+            <p>
+              As an EEE student, I already had some exposure to programming, but building a website made me realise that knowing how to write code is only one part of the process. I started thinking about:
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-gray-300 pl-4">
+              <li>How does the system actually work?</li>
+              <li>How do different components connect?</li>
+              <li>What needs to happen for the website to function properly?</li>
+            </ul>
+            <p>
+              It was interesting to move from simply writing code to understanding the larger system behind it. I initially created a simple website, but I wasn't satisfied with the result. And that dissatisfaction was actually useful.
+            </p>
+            <p>
+              Instead of settling for something that merely worked, I started thinking about how I wanted my personal portfolio and website to represent me. So I began curating the solution rather than simply developing a webpage.
+            </p>
+
+            <div class="p-4 rounded-xl bg-purple-900/30 border border-purple-500/30 text-center font-bold text-purple-200 text-sm my-4">
+              Build &rarr; Evaluate &rarr; Identify what is missing &rarr; Improve
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 rounded-xl bg-brand-500/10 border-l-4 border-brand-500 text-sm text-brand-200 font-medium">
+            <span class="font-bold text-white uppercase tracking-wider block mb-1">Day 4 Takeaway:</span>
+            "Building something that works is one thing. Building something that represents you is another."
+          </div>
+        </section>
+
+        <!-- Day 5 -->
+        <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-300 font-bold border border-brand-500/30">
+              05
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-400 tracking-wider uppercase">Day 5</span>
+              <h2 class="text-2xl font-display font-bold text-white">Mindset, Priorities & Looking Back</h2>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-gray-300">
+            <p>
+              Friday began with an inspiring session by <strong>Ram Kumar Sir</strong>, where we reflected on the mindset required to achieve success. The session made us think beyond technical skills and focus on how we approach our goals, our time, and our priorities.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                <h4 class="text-base font-bold text-brand-300 mb-1">The 80/20 Rule (Pareto Principle)</h4>
+                <p class="text-xs text-gray-300">A relatively small number of inputs can often create a disproportionately large share of results. It made me evaluate where I put my effort.</p>
+              </div>
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                <h4 class="text-base font-bold text-purple-300 mb-1">SMART Goal Framework</h4>
+                <p class="text-xs text-gray-300">Setting goals in a structured, actionable way: <strong>Specific, Measurable, Achievable, Relevant, and Time-bound</strong>.</p>
+              </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-white pt-2">Finishing the Portfolio</h3>
+            <p>
+              After submitting the portfolio, I also started working on the blog content that I wanted to include in my personal website. The portfolio wasn't just an assignment anymore. It was becoming a way to document the journey and communicate who I am, what I have explored, and what I am learning along the way.
+            </p>
+            <p>
+              We eventually wrapped up the week by presenting what we had worked on throughout Week 1.
+            </p>
+          </div>
+        </section>
+
+        <!-- Summary & Landing -->
+        <section class="glass-card p-6 sm:p-10 rounded-2xl border border-brand-500/40 bg-gradient-to-br from-brand-900/30 to-purple-900/30 text-center">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-300 text-2xl shadow-lg border border-brand-500/30">
+            ✈️
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mb-4">
+            WEEK 1 — SECOND LANDING
+          </h2>
+          <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm sm:text-base">
+            If Week 0 was about discovering ourselves, Week 1 felt like the moment we started looking outward and solving problems.
+          </p>
+
+          <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">
+            The biggest shift for me was understanding that problem-solving isn't about rushing towards an answer. It is about asking better questions first. PRICE ProtoSem is becoming a space where I can experiment with how I think, how I create, and how I present myself.
+          </p>
+
+          <div class="inline-block p-4 rounded-2xl bg-brand-600/30 border border-brand-400/40 text-brand-100 font-bold text-base shadow-xl">
+            "First, understand the problem. Then understand yourself. Only then start building."
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/10 py-8 text-center text-xs text-gray-500">
+    <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-gray-300 font-semibold">Harshini Visakai R K</span>
+      </div>
+      <div>PRICE ProtoSem &bull; Week 01</div>
+    </div>
+  </footer>
+
+</body>
+</html>
