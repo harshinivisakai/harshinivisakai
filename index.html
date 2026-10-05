@@ -609,7 +609,7 @@
       return {
         week,
         phase,
-        status: week === 1 ? "READ NOW" : "COMING SOON",
+        status: (week === 1 || week === 2) ? "READ NOW" : "COMING SOON",
         slug: `week-${week.toString().padStart(2, '0')}`
       };
     });
@@ -700,6 +700,10 @@
       }
       if (slug === 'week-01') {
         window.location.href = 'week-01.html';
+        return;
+      }
+      if (slug === 'week-02') {
+        window.location.href = 'week-02.html';
         return;
       }
 

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 02: 5S, Algorithms & Rapid Prototyping | Harshini Visakai</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              accent: '#8b5cf6',
+              glow: '#a855f7'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #f3f4f6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.2);
+      transform: translateY(-2px);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 40%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-bg {
+      position: absolute;
+      filter: blur(90px);
+      opacity: 0.45;
+      z-index: 0;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .step-arrow {
+      color: #818cf8;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="relative selection:bg-brand-500 selection:text-white">
+
+  <!-- Ambient Glowing Blobs -->
+  <div class="glow-bg bg-brand-600 w-96 h-96 -top-20 -left-20 animate-pulse"></div>
+  <div class="glow-bg bg-purple-600 w-80 h-80 top-1/4 right-0 animate-pulse" style="animation-delay: 2s;"></div>
+  <div class="glow-bg bg-indigo-600 w-96 h-96 bottom-1/4 left-10 animate-pulse" style="animation-delay: 4s;"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 transition-all duration-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-between glass-card px-6 py-3.5 rounded-full border border-white/10">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white text-sm shadow-lg group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <span class="font-display font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-brand-300 transition-colors">
+          Back to Portfolio
+        </span>
+      </a>
+      <div class="flex items-center gap-3">
+        <a href="week-01.html" class="text-xs font-semibold text-gray-400 hover:text-brand-300 transition-colors hidden sm:inline-flex items-center gap-1">
+          <i class="fa-solid fa-chevron-left text-[10px]"></i> Week 01
+        </a>
+        <div class="text-xs font-semibold text-brand-300 bg-brand-500/10 px-3 py-1.5 rounded-full border border-brand-500/20">
+          WEEK 02
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Content Container -->
+  <main class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-20">
+    
+    <div class="glass-card rounded-3xl p-6 sm:p-10 border border-brand-500/30">
+      
+      <!-- Blog Header -->
+      <header class="text-center mb-12 border-b border-white/10 pb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/20 text-brand-300 text-xs font-bold mb-4 tracking-wider uppercase border border-brand-500/30">
+          <i class="fa-solid fa-compass text-brand-400"></i> PHASE 01 &bull; WEEK 02
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white mb-4 leading-tight tracking-tight">
+          WEEK 2 — <span class="gradient-text">PROBLEM IDENTIFICATION, LOGIC & APP CREATION</span>
+        </h1>
+        <p class="text-gray-400 text-base max-w-2xl mx-auto">
+          PRICE ProtoSem Journal &bull; 5S Methodology, Algorithmic Thinking, Creative Scratch Coding & MIT App Inventor
+        </p>
+      </header>
+
+      <!-- Key Journey Stepper -->
+      <div class="glass-card rounded-2xl p-6 mb-12 border border-white/10 bg-white/[0.02]">
+        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-route text-brand-400"></i> Week 2 Evolution Overview
+        </h3>
+        <div class="flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-semibold text-gray-200">
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Problem Identification & 5S</div>
+          <span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Algorithms & Think Like a Coder</div>
+          <span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Rapid Scratch Meme</div>
+          <span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">MIT App Inventor (College Connect)</div>
+        </div>
+      </div>
+
+      <!-- Article Body Section -->
+      <div class="space-y-12 text-gray-300 leading-relaxed font-sans">
+
+        <!-- Day 1 -->
+        <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-300 font-bold border border-brand-500/30">
+              01
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-400 tracking-wider uppercase">Day 1</span>
+              <h2 class="text-2xl font-display font-bold text-white">Problem Identification & Japanese 5S Methodology</h2>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-gray-300">
+            <h3 class="text-lg font-semibold text-white flex items-center gap-2">
+              <i class="fa-solid fa-magnifying-glass text-indigo-400 text-sm"></i> Observing Problems with Fresh Eyes
+            </h3>
+            <p>
+              We started the week with <strong>Problem Identification</strong>, where we learned to observe problems deeply in our physical environment and think about possible structured solutions rather than rushing to conclusions.
+            </p>
+            <p>
+              Alongside problem identification, we were introduced to the renowned <strong>Japanese 5S Methodology</strong> — a systematic framework designed to organize spaces so work can be performed efficiently, effectively, and safely:
+            </p>
+
+            <!-- 5S Stages Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 my-5 text-center">
+              <div class="p-3.5 rounded-xl bg-brand-900/40 border border-brand-500/30 flex flex-col justify-center">
+                <div class="text-xs text-brand-300 font-bold tracking-wide">1. SEIRI</div>
+                <div class="text-[11px] text-gray-400 mt-1">Sort</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-brand-900/40 border border-brand-500/30 flex flex-col justify-center">
+                <div class="text-xs text-brand-300 font-bold tracking-wide">2. SEITON</div>
+                <div class="text-[11px] text-gray-400 mt-1">Set in Order</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-brand-900/40 border border-brand-500/30 flex flex-col justify-center">
+                <div class="text-xs text-brand-300 font-bold tracking-wide">3. SEISO</div>
+                <div class="text-[11px] text-gray-400 mt-1">Shine</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-brand-900/40 border border-brand-500/30 flex flex-col justify-center">
+                <div class="text-xs text-brand-300 font-bold tracking-wide">4. SEIKETSU</div>
+                <div class="text-[11px] text-gray-400 mt-1">Standardize</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-brand-900/40 border border-brand-500/30 flex flex-col justify-center">
+                <div class="text-xs text-brand-300 font-bold tracking-wide">5. SHITSUKE</div>
+                <div class="text-[11px] text-gray-400 mt-1">Sustain</div>
+              </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-white pt-4 flex items-center gap-2">
+              <i class="fa-solid fa-toolbox text-amber-400 text-sm"></i> Hands-On Application: The Red Cubical
+            </h3>
+            <p>
+              To put theory into practice immediately, we applied the 5S method to organize and manage the tools in the <strong>Red Cubical</strong>.
+            </p>
+            <p>
+              By sorting through necessary items, designating dedicated locations for each tool, cleaning the workspace, standardizing visual placements, and building habits to sustain order, we saw firsthand how proper organization drastically reduces wasted search time, minimizes friction, and boosts overall productivity.
+            </p>
+          </div>
+
+          <div class="mt-6 p-4 rounded-xl bg-brand-500/10 border-l-4 border-brand-500 text-sm text-brand-200 font-medium">
+            <span class="font-bold text-white uppercase tracking-wider block mb-1">Day 1 Takeaway:</span>
+            "Proper organization is not just about cleanliness; it is the operational foundation for efficiency, safety, and clear thinking."
+          </div>
+        </section>
+
+        <!-- Day 2 -->
+        <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-300 font-bold border border-brand-500/30">
+              02
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-400 tracking-wider uppercase">Day 2</span>
+              <h2 class="text-2xl font-display font-bold text-white">Algorithms & Think Like a Coder</h2>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-gray-300">
+            <h3 class="text-lg font-semibold text-white flex items-center gap-2">
+              <i class="fa-solid fa-utensils text-orange-400 text-sm"></i> The Podi Dosa Algorithm
+            </h3>
+            <p>
+              On Day 2, we bridged daily life and computational logic by designing an algorithm for making a simple South Indian delicacy: <strong>Podi Dosa</strong>.
+            </p>
+            <p>
+              While it seemed like an ordinary cooking activity at first, writing down the exact algorithm forced us to deconstruct a familiar process into deterministic, step-by-step instructions. We had to consider inputs (batter, ghee, podi), preconditions (hot tawa), precise sequences of actions, and termination conditions (crisp golden brown).
+            </p>
+
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-center font-mono text-xs sm:text-sm text-brand-300">
+              Heat Tawa &rarr; Pour Batter &rarr; Circular Spread &rarr; Drizzle Ghee &rarr; Sprinkle Podi &rarr; Flip & Toast &rarr; Serve Crisp
+            </div>
+
+            <h3 class="text-lg font-semibold text-white pt-4 flex items-center gap-2">
+              <i class="fa-solid fa-brain text-purple-400 text-sm"></i> “Think Like a Coder” Masterclass
+            </h3>
+            <p>
+              We also immersed ourselves in the <strong>“Think Like a Coder”</strong> animated series, successfully watching and analyzing all <strong>11 episodes</strong>.
+            </p>
+            <p>
+              The narrative challenges introduced foundational concepts in a memorable, story-driven format:
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-3">
+              <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+                <span class="text-xs font-bold text-brand-300 block mb-1">Logic & Conditions</span>
+                <p class="text-xs text-gray-400">Evaluating branching decisions (if/else) and deterministic rules.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+                <span class="text-xs font-bold text-purple-300 block mb-1">Loops & Iteration</span>
+                <p class="text-xs text-gray-400">Automating repetitive patterns efficiently without redundant work.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+                <span class="text-xs font-bold text-indigo-300 block mb-1">Decomposition</span>
+                <p class="text-xs text-gray-400">Breaking complex monumental problems down into smaller bite-sized components.</p>
+              </div>
+            </div>
+
+            <p>
+              The series transformed our perspective: coding is not merely syntax, but the fundamental discipline of computational thinking and structural problem-solving.
+            </p>
+          </div>
+
+          <div class="mt-6 p-4 rounded-xl bg-brand-500/10 border-l-4 border-brand-500 text-sm text-brand-200 font-medium">
+            <span class="font-bold text-white uppercase tracking-wider block mb-1">Day 2 Takeaway:</span>
+            "Every complex human task is an algorithm in disguise. When you break it down into clear steps, anything can be solved."
+          </div>
+        </section>
+
+        <!-- Day 3 -->
+        <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-300 font-bold border border-brand-500/30">
+              03
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-400 tracking-wider uppercase">Day 3</span>
+              <h2 class="text-2xl font-display font-bold text-white">Rapid Creative Coding: Scratch 2-Minute Meme</h2>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-gray-300">
+            <h3 class="text-lg font-semibold text-white flex items-center gap-2">
+              <i class="fa-solid fa-cat text-amber-400 text-sm"></i> Block-Based Programming Under Pressure
+            </h3>
+            <p>
+              Day 3 was an energetic and creative session. We used <strong>MIT Scratch</strong> with a specific, high-intensity constraint: <strong>create an interactive meme within just 2 minutes</strong>.
+            </p>
+            <p>
+              Working under tight time pressure forced us to discard overthinking and focus entirely on core mechanics: selecting sprites, scripting costumes, triggering audio soundbites, and choreographing block events.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                <h4 class="text-sm font-bold text-brand-300 mb-1 flex items-center gap-2">
+                  <i class="fa-solid fa-bolt text-yellow-400"></i> Speed & Intuition
+                </h4>
+                <p class="text-xs text-gray-300">Rapid decision-making replaced hesitation. We learned how visual block logic lets developers test ideas instantly.</p>
+              </div>
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                <h4 class="text-sm font-bold text-purple-300 mb-1 flex items-center gap-2">
+                  <i class="fa-solid fa-wand-magic-sparkles text-purple-400"></i> Creativity + Code
+                </h4>
+                <p class="text-xs text-gray-300">Humor and storytelling combined with event handling, timing delays, and conditional triggers.</p>
+              </div>
+            </div>
+
+            <p>
+              This activity helped us explore basic programming fundamentals while proving that building software can be playful, engaging, and remarkably fast.
+            </p>
+          </div>
+
+          <div class="mt-6 p-4 rounded-xl bg-brand-500/10 border-l-4 border-brand-500 text-sm text-brand-200 font-medium">
+            <span class="font-bold text-white uppercase tracking-wider block mb-1">Day 3 Takeaway:</span>
+            "Strict constraints spark explosive creativity. Quick prototyping beats endless contemplation."
+          </div>
+        </section>
+
+        <!-- Day 4 -->
+        <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-300 font-bold border border-brand-500/30">
+              04
+            </div>
+            <div>
+              <span class="text-xs font-bold text-brand-400 tracking-wider uppercase">Day 4</span>
+              <h2 class="text-2xl font-display font-bold text-white">App Development with MIT App Inventor: College Connect</h2>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-gray-300">
+            <h3 class="text-lg font-semibold text-white flex items-center gap-2">
+              <i class="fa-solid fa-mobile-screen-button text-emerald-400 text-sm"></i> Building “College Connect”
+            </h3>
+            <p>
+              On Day 4, we transitioned into full mobile app creation using <strong>MIT App Inventor</strong>, developing a functional Android application named <strong>College Connect</strong>.
+            </p>
+            <p>
+              The primary purpose of the app was to address a real campus communication challenge: helping students easily discover, navigate, and stay updated on college activities, inter-departmental events, seminars, and important notices across campus.
+            </p>
+
+            <!-- App Features Box -->
+            <div class="glass-card rounded-2xl p-5 border border-brand-500/20 bg-brand-900/10 my-4">
+              <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-circle-nodes text-brand-400"></i> Key Functional Highlights of College Connect
+              </h4>
+              <ul class="space-y-2 text-xs sm:text-sm text-gray-300">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check-circle text-emerald-400 mt-1 text-xs"></i>
+                  <span><strong>Centralized Event Feed:</strong> Aggregates announcements from multiple departments in one clean interface.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check-circle text-emerald-400 mt-1 text-xs"></i>
+                  <span><strong>Intuitive UI Navigation:</strong> Clean layouts built with layout arrangements, buttons, and responsive view containers.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check-circle text-emerald-400 mt-1 text-xs"></i>
+                  <span><strong>Real-World Problem Solving:</strong> Direct application of technology to streamline campus information sharing.</span>
+                </li>
+              </ul>
+            </div>
+
+            <p>
+              This activity provided invaluable practical exposure to user interface design, event-driven programming, and deployment testing on real smartphones. It showed us how technology can directly resolve everyday communication friction faced by students.
+            </p>
+          </div>
+
+          <div class="mt-6 p-4 rounded-xl bg-brand-500/10 border-l-4 border-brand-500 text-sm text-brand-200 font-medium">
+            <span class="font-bold text-white uppercase tracking-wider block mb-1">Day 4 Takeaway:</span>
+            "The best applications are born out of empathy for everyday student challenges."
+          </div>
+        </section>
+
+        <!-- Summary & Landing -->
+        <section class="glass-card p-6 sm:p-10 rounded-2xl border border-brand-500/40 bg-gradient-to-br from-brand-900/30 to-purple-900/30 text-center">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-300 text-2xl shadow-lg border border-brand-500/30">
+            ⚡
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mb-4">
+            WEEK 2 — STRUCTURE, LOGIC & RAPID BUILDING
+          </h2>
+          <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm sm:text-base">
+            Week 2 connected the physical world with computational logic and digital creation.
+          </p>
+
+          <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">
+            Whether organizing physical tools in the Red Cubical using 5S, breaking down the steps of making Podi Dosa, crafting an interactive meme in 2 minutes, or engineering the College Connect app in MIT App Inventor — the core lesson remained consistent: clear thinking and structured processes turn any problem into an actionable solution.
+          </p>
+
+          <div class="inline-block p-4 rounded-2xl bg-brand-600/30 border border-brand-400/40 text-brand-100 font-bold text-base shadow-xl">
+            "From physical organization with 5S to digital systems with App Inventor — real innovation starts with structured thinking."
+          </div>
+        </section>
+
+        <!-- Week Navigation Links -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10">
+          <a href="week-01.html" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-all text-sm font-semibold flex items-center justify-center gap-2">
+            <i class="fa-solid fa-arrow-left text-xs"></i>
+            <span>Previous: Week 01 Journal</span>
+          </a>
+          <a href="index.html#protosem" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-brand-600/30 hover:bg-brand-600 border border-brand-500/40 text-brand-200 hover:text-white transition-all text-sm font-semibold flex items-center justify-center gap-2">
+            <span>Back to Timeline</span>
+            <i class="fa-solid fa-arrow-up text-xs"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/10 py-8 text-center text-xs text-gray-500">
+    <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-gray-300 font-semibold">Harshini Visakai R K</span>
+      </div>
+      <div>PRICE ProtoSem &bull; Week 02</div>
+    </div>
+  </footer>
+
+</body>
+</html>
