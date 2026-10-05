@@ -606,7 +606,8 @@
     const weekTitles = {
       0: "Chennai Retail Summit",
       1: "From Curiosity to Problem-Solving",
-      2: "Problem Identification, Logic & App Creation"
+      2: "Problem Identification, Logic & App Creation",
+      6: "Digital Fabrication: Laser Cutting & 3D Printing"
     };
 
     const protoSemWeeks = Array.from({ length: 20 }, (_, i) => {
@@ -616,7 +617,7 @@
         week,
         phase,
         title: weekTitles[week] || "",
-        status: (week === 1 || week === 2) ? "READ NOW" : "COMING SOON",
+        status: (week === 1 || week === 2 || week === 6) ? "READ NOW" : "COMING SOON",
         slug: `week-${week.toString().padStart(2, '0')}`
       };
     });
@@ -716,6 +717,10 @@
       }
       if (slug === 'week-02') {
         window.location.href = 'week-02.html';
+        return;
+      }
+      if (slug === 'week-06') {
+        window.location.href = 'week-06.html';
         return;
       }
 
