@@ -1,4 +1,4 @@
-# WEEK 2 — PROBLEM IDENTIFICATION, LOGIC & APP CREATION
+# WEEK 2 — PROBLEM IDENTIFICATION, LOGIC, APP CREATION & DIGITAL FABRICATION
 
 ## Day 1 – Problem Identification & 5S
 
@@ -74,6 +74,46 @@ This activity gave us practical exposure to app development and showed us how te
 
 ---
 
+## Digital Fabrication: Laser Cutting & Vector Engraving
+
+### 1. Machine & Safety
+- **Machine**: FORGE 1490 CO₂ Laser Cutter (150W, 1300 × 900 mm bed)
+- **Material**: 2 mm Transparent Acrylic (50 × 50 mm blank)
+- **Safety Protocols**: Active exhaust ventilation, water chiller circulation, air-assist blowing, closed enclosure operation, and strict exclusion of toxic PVC plastics.
+
+### 2. Design & Vector Workflow
+- **Selected Graphic**: “FIRE IN THE HOLE!!” flame character graphic.
+- **Image-to-DXF Vector Conversion**: Converted raster contours to closed vector paths, scaled to 45 × 45 mm, and assigned separate Laser Cut (vector outline) and Laser Scan (engraving) layers in RDWorks.
+- **Parameters**: 100 mm/s speed, 30% min/max power, single pass (Simulated time: 1m 14.3s).
+
+> **Laser Cutting takeaway:**  
+> Digital fabrication quality is won in vector preparation. Clean paths and tuned power settings turn raw acrylic into precise physical artwork.
+
+---
+
+## Digital Fabrication: 3D Printing & Additive Manufacturing
+
+### 1. Machine & Material
+- **Machine**: Bambu Lab H2S CoreXY High-Speed 3D Printer (340 × 320 × 340 mm build volume)
+- **Extruder**: 0.4 mm Hardened-Steel Nozzle
+- **Material**: 1.75 mm White PLA Filament
+- **Software**: Bambu Studio Slicer
+
+### 2. Selected Model & Slicer Parameters
+- **Model**: Organic Toothless Dragon STL (45.7 × 98.7 × 16.2 mm envelope) demonstrating organic curves, overhangs, and undercuts.
+- **Slicer Settings**:
+  - Layer Height: 0.20 mm
+  - Nozzle Temp: 220 °C | Bed Temp: 55 °C
+  - Infill: 15% Gyroid (for multi-directional mechanical strength)
+  - Wall Loops: 2 | Print Speed: 200 mm/s
+  - Total Print Time: 37 min 47 s
+  - Filament Used: 8.62 g total (8.50 g model + 0.11 g support)
+
+> **3D Printing takeaway:**  
+> Additive manufacturing removes conventional geometric limitations. Slicing orientation and support economy make complex organic prototyping accessible.
+
+---
+
 ## Week 2 Summary
 
-From organizing physical tools with 5S to crafting digital tools with MIT App Inventor — true innovation starts with structured thinking and breaking problems down into actionable steps.
+From 5S physical discipline and algorithmic thinking to Scratch, App Inventor, CO₂ laser engraving, and Bambu Lab 3D printing — true innovation lies in mastering both digital logic and physical fabrication.
