@@ -3,467 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Week 06: Digital Fabrication – Laser Cutting & 3D Printing | Harshini Visakai</title>
-  
-  <!-- Google Fonts -->
+  <title>Week 06: Digital Fabrication - Laser Cutting &amp; 3D Printing | Harshini Visakai</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Outfit"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            brand: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              200: '#c7d2fe',
-              300: '#a5b4fc',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-              800: '#3730a3',
-              900: '#312e81',
-              accent: '#8b5cf6',
-              glow: '#a855f7'
-            }
-          }
-        }
-      }
+      theme: { extend: { fontFamily: { sans:['"Plus Jakarta Sans"','sans-serif'], display:['"Outfit"','sans-serif'], mono:['"JetBrains Mono"','monospace'] }, colors: { brand:{ 50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',accent:'#8b5cf6',glow:'#a855f7' } } } }
     }
   </script>
-
   <style>
-    body {
-      background-color: #0b0f19;
-      color: #f3f4f6;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      overflow-x: hidden;
-    }
-    .glass-card {
-      background: rgba(17, 24, 39, 0.75);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-    }
-    .glass-card-hover {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .glass-card-hover:hover {
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.2);
-      transform: translateY(-2px);
-    }
-    .gradient-text {
-      background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 40%, #c084fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .glow-bg {
-      position: absolute;
-      filter: blur(90px);
-      opacity: 0.45;
-      z-index: 0;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .step-arrow {
-      color: #818cf8;
-      font-weight: bold;
-    }
-    .custom-table th {
-      background: rgba(99, 102, 241, 0.15);
-      color: #e0e7ff;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .custom-table td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      font-size: 0.8125rem;
-    }
-    .custom-table tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
-    }
+    body{background-color:#0b0f19;color:#f3f4f6;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden}
+    .glass-card{background:rgba(17,24,39,.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+    .glass-card-hover{transition:all .3s cubic-bezier(.4,0,.2,1)}
+    .glass-card-hover:hover{border-color:rgba(99,102,241,.4);box-shadow:0 20px 40px -15px rgba(99,102,241,.2);transform:translateY(-2px)}
+    .gradient-text{background:linear-gradient(135deg,#a5b4fc 0%,#818cf8 40%,#c084fc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .glow-bg{position:absolute;filter:blur(90px);opacity:.45;z-index:0;border-radius:50%;pointer-events:none}
+    .step-arrow{color:#818cf8;font-weight:bold}
+    .custom-table th{background:rgba(99,102,241,.15);color:#e0e7ff;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.1)}
+    .custom-table td{padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8125rem}
+    .custom-table tr:hover td{background:rgba(255,255,255,.02)}
+    .photo-caption{display:block;text-align:center;font-size:.72rem;color:#9ca3af;margin-top:.5rem;font-style:italic}
+    .photo-frame{border-radius:.75rem;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.3)}
+    .photo-frame img{width:100%;height:auto;display:block;transition:transform .4s ease}
+    .photo-frame:hover img{transform:scale(1.02)}
   </style>
 </head>
 <body class="relative selection:bg-brand-500 selection:text-white">
-
-  <!-- Ambient Glowing Blobs -->
   <div class="glow-bg bg-purple-600 w-96 h-96 -top-20 -left-20 animate-pulse"></div>
-  <div class="glow-bg bg-brand-600 w-80 h-80 top-1/4 right-0 animate-pulse" style="animation-delay: 2s;"></div>
-  <div class="glow-bg bg-cyan-600 w-96 h-96 bottom-1/4 left-10 animate-pulse" style="animation-delay: 4s;"></div>
+  <div class="glow-bg bg-brand-600 w-80 h-80 top-1/4 right-0 animate-pulse" style="animation-delay:2s;"></div>
+  <div class="glow-bg bg-cyan-600 w-96 h-96 bottom-1/4 left-10 animate-pulse" style="animation-delay:4s;"></div>
 
-  <!-- Navigation Bar -->
   <nav class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 transition-all duration-300">
     <div class="max-w-6xl mx-auto flex items-center justify-between glass-card px-6 py-3.5 rounded-full border border-white/10">
       <a href="index.html" class="flex items-center gap-3 group">
-        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white text-sm shadow-lg group-hover:scale-105 transition-transform">
-          <i class="fa-solid fa-arrow-left"></i>
-        </div>
-        <span class="font-display font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-brand-300 transition-colors">
-          Back to Portfolio
-        </span>
+        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white text-sm shadow-lg group-hover:scale-105 transition-transform"><i class="fa-solid fa-arrow-left"></i></div>
+        <span class="font-display font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-brand-300 transition-colors">Back to Portfolio</span>
       </a>
       <div class="flex items-center gap-3">
-        <a href="week-02.html" class="text-xs font-semibold text-gray-400 hover:text-brand-300 transition-colors hidden sm:inline-flex items-center gap-1">
-          <i class="fa-solid fa-chevron-left text-[10px]"></i> Week 02
-        </a>
-        <div class="text-xs font-semibold text-purple-300 bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-500/20">
-          WEEK 06 &bull; PHASE 02
-        </div>
+        <a href="week-02.html" class="text-xs font-semibold text-gray-400 hover:text-brand-300 transition-colors hidden sm:inline-flex items-center gap-1"><i class="fa-solid fa-chevron-left text-[10px]"></i> Week 02</a>
+        <div class="text-xs font-semibold text-purple-300 bg-purple-500/10 px-3 py-1.5 rounded-full border border-purple-500/20">WEEK 06 &bull; PHASE 02</div>
       </div>
     </div>
   </nav>
 
-  <!-- Blog Content Container -->
   <main class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-20">
-    
     <div class="glass-card rounded-3xl p-6 sm:p-10 border border-brand-500/30">
-      
-      <!-- Blog Header -->
+
       <header class="text-center mb-12 border-b border-white/10 pb-10">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold mb-4 tracking-wider uppercase border border-purple-500/30">
           <i class="fa-solid fa-cubes text-purple-400"></i> PHASE 02 &bull; WEEK 06
         </div>
         <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white mb-4 leading-tight tracking-tight">
-          WEEK 6 — <span class="gradient-text">DIGITAL FABRICATION: LASER CUTTING & 3D PRINTING</span>
+          WEEK 6 &mdash; <span class="gradient-text">DIGITAL FABRICATION: LASER CUTTING &amp; 3D PRINTING</span>
         </h1>
-        <p class="text-gray-400 text-base max-w-2xl mx-auto">
-          PRICE ProtoSem Digital Fabrication Journal &bull; Subtractive CO₂ Laser Machining, Vector Optimization, Additive FDM Slicing & Bambu Lab H2S Prototyping
-        </p>
+        <p class="text-gray-400 text-base max-w-2xl mx-auto">PRICE ProtoSem Digital Fabrication Journal &bull; Subtractive CO&#8322; Laser Machining, Vector Optimization, Additive FDM Slicing &amp; Bambu Lab H2S Prototyping</p>
       </header>
 
-      <!-- Key Journey Stepper -->
       <div class="glass-card rounded-2xl p-6 mb-12 border border-white/10 bg-white/[0.02]">
-        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-          <i class="fa-solid fa-route text-brand-400"></i> Fabrication Workflow Overview
-        </h3>
+        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2"><i class="fa-solid fa-route text-brand-400"></i> Fabrication Workflow Overview</h3>
         <div class="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-semibold text-gray-200">
-          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Lab Safety & Setup</div>
-          <span class="step-arrow">&rarr;</span>
-          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Vector DXF Prep</div>
-          <span class="step-arrow">&rarr;</span>
-          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">CO₂ Laser Machining</div>
-          <span class="step-arrow">&rarr;</span>
-          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Additive vs Subtractive</div>
-          <span class="step-arrow">&rarr;</span>
-          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Bambu Studio Slicing</div>
-          <span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Lab Safety &amp; Setup</div><span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Vector DXF Prep</div><span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">CO&#8322; Laser Machining</div><span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Additive vs Subtractive</div><span class="step-arrow">&rarr;</span>
+          <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">Bambu Studio Slicing</div><span class="step-arrow">&rarr;</span>
           <div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">FDM 3D Print</div>
         </div>
       </div>
 
-      <!-- Article Body Section -->
       <div class="space-y-12 text-gray-300 leading-relaxed font-sans">
 
-        <!-- SEGMENT 1: LASER CUTTING -->
+        <!-- LASER CUTTING -->
         <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-300 font-bold border border-amber-500/30">
-              <i class="fa-solid fa-fire text-lg"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-amber-400 tracking-wider uppercase">Segment 01</span>
-              <h2 class="text-2xl font-display font-bold text-white">Laser Cutting & Vector Engraving</h2>
-            </div>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-300 border border-amber-500/30"><i class="fa-solid fa-fire text-lg"></i></div>
+            <div><span class="text-xs font-bold text-amber-400 tracking-wider uppercase">Segment 01</span><h2 class="text-2xl font-display font-bold text-white">Laser Cutting &amp; Vector Engraving</h2></div>
           </div>
-
           <div class="space-y-5 text-gray-300">
-            <h3 class="text-lg font-semibold text-white flex items-center gap-2">
-              <i class="fa-solid fa-shield-halved text-emerald-400 text-sm"></i> 1. Laboratory Safety & Strict Protocols
-            </h3>
-            <p>
-              Operating high-energy CO₂ lasers requires strict adherence to thermal, electrical, and optical safety standards. Before initializing any job:
-            </p>
+            <h3 class="text-lg font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-shield-halved text-emerald-400 text-sm"></i> 1. Laboratory Safety &amp; Strict Protocols</h3>
+            <p>Operating high-energy CO&#8322; lasers requires strict adherence to thermal, electrical, and optical safety standards. Before initializing any job:</p>
             <ul class="list-disc list-inside space-y-1 text-xs sm:text-sm text-gray-300 pl-2">
               <li><strong>Exhaust Ventilation:</strong> The blower system was activated to continuously extract acrylic fumes and smoke particles.</li>
-              <li><strong>Water Chiller Cooling:</strong> The CO₂ tube cooling circulation was verified to prevent thermal stress on the laser tube.</li>
-              <li><strong>Active Air Assist:</strong> High-pressure lower blowing was kept engaged to suppress flames and blow debris away from the cutting focal point.</li>
-              <li><strong>Material Verification:</strong> Used only laboratory-approved 2 mm transparent acrylic. Chlorine-based plastics (such as PVC) are strictly prohibited due to corrosive and toxic gas emissions.</li>
+              <li><strong>Water Chiller Cooling:</strong> The CO&#8322; tube cooling circulation was verified to prevent thermal stress on the laser tube.</li>
+              <li><strong>Active Air Assist:</strong> High-pressure lower blowing was kept engaged to suppress flames and blow debris away from the focal point.</li>
+              <li><strong>Material Verification:</strong> Only laboratory-approved 2 mm transparent acrylic was used. Chlorine-based plastics (PVC) are strictly prohibited due to toxic gas emissions.</li>
             </ul>
-
-            <h3 class="text-lg font-semibold text-white pt-2 flex items-center gap-2">
-              <i class="fa-solid fa-gears text-indigo-400 text-sm"></i> 2. Machine Details & Technical Specifications
-            </h3>
-
-            <!-- Machine Specs Table -->
+            <h3 class="text-lg font-semibold text-white pt-2 flex items-center gap-2"><i class="fa-solid fa-gears text-indigo-400 text-sm"></i> 2. Machine Details &amp; Technical Specifications</h3>
             <div class="overflow-x-auto rounded-xl border border-white/10 my-4">
               <table class="w-full text-left custom-table">
-                <thead>
-                  <tr>
-                    <th>Specification</th>
-                    <th>Machine Detail</th>
-                  </tr>
-                </thead>
+                <thead><tr><th>Specification</th><th>Machine Detail</th></tr></thead>
                 <tbody>
-                  <tr>
-                    <td class="font-semibold text-white">Machine Make & Model</td>
-                    <td class="text-brand-300 font-mono">FORGE 1490 CO₂ Laser Cutter</td>
-                  </tr>
-                  <tr>
-                    <td class="font-semibold text-white">Working Bed Area</td>
-                    <td class="text-brand-300 font-mono">1300 × 900 mm</td>
-                  </tr>
-                  <tr>
-                    <td class="font-semibold text-white">Laser Tube Power</td>
-                    <td class="text-brand-300 font-mono">150 W CO₂ Tube</td>
-                  </tr>
-                  <tr>
-                    <td class="font-semibold text-white">Control Software</td>
-                    <td class="text-brand-300 font-mono">RDWorks (DXF Manufacturing Format)</td>
-                  </tr>
-                  <tr>
-                    <td class="font-semibold text-white">Workpiece & Material</td>
-                    <td class="text-brand-300 font-mono">2 mm Transparent Acrylic (50 × 50 mm Blank)</td>
-                  </tr>
+                  <tr><td class="font-semibold text-white">Machine Make &amp; Model</td><td class="text-brand-300 font-mono">FORGE 1490 CO&#8322; Laser Cutter</td></tr>
+                  <tr><td class="font-semibold text-white">Working Bed Area</td><td class="text-brand-300 font-mono">1300 &times; 900 mm</td></tr>
+                  <tr><td class="font-semibold text-white">Laser Tube Power</td><td class="text-brand-300 font-mono">150 W CO&#8322; Tube</td></tr>
+                  <tr><td class="font-semibold text-white">Control Software</td><td class="text-brand-300 font-mono">RDWorks (DXF Manufacturing Format)</td></tr>
+                  <tr><td class="font-semibold text-white">Workpiece &amp; Material</td><td class="text-brand-300 font-mono">2 mm Transparent Acrylic (50 &times; 50 mm Blank)</td></tr>
                 </tbody>
               </table>
             </div>
-
-            <h3 class="text-lg font-semibold text-white pt-2 flex items-center gap-2">
-              <i class="fa-solid fa-pen-nib text-purple-400 text-sm"></i> 3. Selected Artwork & Image-to-DXF Vector Workflow
-            </h3>
-            <p>
-              We selected the dynamic <strong>“FIRE IN THE HOLE!!”</strong> flame character graphic. This design was specifically chosen because it blends delicate facial features, curved silhouettes, bold typography, and dense filled areas — serving as an ideal benchmark for testing both vector line cutting and raster scan engraving.
-            </p>
-
-            <!-- 3-Step Vector Pipeline -->
+            <h3 class="text-lg font-semibold text-white pt-2 flex items-center gap-2"><i class="fa-solid fa-pen-nib text-purple-400 text-sm"></i> 3. Selected Artwork &amp; Image-to-DXF Vector Workflow</h3>
+            <p>We selected the dynamic <strong>"FIRE IN THE HOLE!!"</strong> flame character graphic. This design was chosen because it blends delicate facial features, curved silhouettes, bold typography, and dense filled areas — an ideal benchmark for testing both vector line cutting and raster scan engraving.</p>
+            <!-- Fig 1 -->
+            <div class="photo-frame my-5">
+              <img src="assets/FIRE IN THE HOLE!!.png" alt="FIRE IN THE HOLE!! vector artwork selected for laser engraving" loading="lazy" />
+              <span class="photo-caption">Fig 1. "FIRE IN THE HOLE!!" original vector artwork prepared for CO&#8322; laser engraving on 2 mm transparent acrylic (50 &times; 50 mm blank).</span>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-4">
-              <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
-                <span class="text-xs font-bold text-brand-300 block mb-1">1. Vector Conversion</span>
-                <p class="text-xs text-gray-400">Converted raster artwork into clean, closed vector paths; stripped unwanted noise and overlapping trace artifacts.</p>
-              </div>
-              <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
-                <span class="text-xs font-bold text-purple-300 block mb-1">2. Scaling & Margins</span>
-                <p class="text-xs text-gray-400">Scaled artwork to 45 × 45 mm, leaving a clean protective margin inside the 50 × 50 mm acrylic blank.</p>
-              </div>
-              <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5">
-                <span class="text-xs font-bold text-emerald-300 block mb-1">3. RDWorks Layer Setup</span>
-                <p class="text-xs text-gray-400">Assigned Laser Scan layer (for engraving details) and Laser Cut layer (for outer boundary scoring) at 100 mm/s & 30% power.</p>
-              </div>
+              <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5"><span class="text-xs font-bold text-brand-300 block mb-1">1. Vector Conversion</span><p class="text-xs text-gray-400">Converted raster artwork into clean, closed vector paths; stripped noise and overlapping trace artifacts.</p></div>
+              <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5"><span class="text-xs font-bold text-purple-300 block mb-1">2. Scaling &amp; Margins</span><p class="text-xs text-gray-400">Scaled artwork to 45 &times; 45 mm, leaving a safe margin inside the 50 &times; 50 mm acrylic blank.</p></div>
+              <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5"><span class="text-xs font-bold text-emerald-300 block mb-1">3. RDWorks Layer Setup</span><p class="text-xs text-gray-400">Assigned Laser Scan (engraving) and Laser Cut (outline) layers at 100 mm/s &amp; 30% power.</p></div>
             </div>
-
-            <!-- Parameters Box -->
+            <!-- Fig 2 -->
+            <div class="photo-frame my-5">
+              <img src="assets/Screenshot 2026-09-28 120029.png" alt="RDWorks interface showing Laser Cut and Laser Scan layers with DXF loaded" loading="lazy" />
+              <span class="photo-caption">Fig 2. RDWorks full interface &mdash; DXF imported with "Laser Cut" (black outline) and "Laser Scan" (blue engraving) layers. Speed: 100 mm/s &middot; MinPower: 30% &middot; MaxPower: 30%.</span>
+            </div>
             <div class="glass-card rounded-2xl p-4 border border-white/10 bg-white/[0.02]">
-              <h4 class="text-xs font-bold text-amber-300 uppercase tracking-wider mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-gauge-high"></i> Recorded Laser Parameters & Simulation
-              </h4>
+              <h4 class="text-xs font-bold text-amber-300 uppercase tracking-wider mb-2 flex items-center gap-2"><i class="fa-solid fa-gauge-high"></i> Recorded Laser Parameters &amp; Simulation Data</h4>
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                <div class="p-2.5 rounded-lg bg-white/5">
-                  <span class="text-gray-400 block text-[11px]">Processing Speed</span>
-                  <span class="font-mono font-bold text-white">100 mm/s</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-white/5">
-                  <span class="text-gray-400 block text-[11px]">Power (Min / Max)</span>
-                  <span class="font-mono font-bold text-white">30% / 30%</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-white/5">
-                  <span class="text-gray-400 block text-[11px]">Simulated Total Time</span>
-                  <span class="font-mono font-bold text-white">1 min 14.3 s</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-white/5">
-                  <span class="text-gray-400 block text-[11px]">Laser Light Time</span>
-                  <span class="font-mono font-bold text-white">28.38 s</span>
-                </div>
+                <div class="p-2.5 rounded-lg bg-white/5"><span class="text-gray-400 block text-[11px]">Processing Speed</span><span class="font-mono font-bold text-white">100 mm/s</span></div>
+                <div class="p-2.5 rounded-lg bg-white/5"><span class="text-gray-400 block text-[11px]">Power (Min / Max)</span><span class="font-mono font-bold text-white">30% / 30%</span></div>
+                <div class="p-2.5 rounded-lg bg-white/5"><span class="text-gray-400 block text-[11px]">Simulated Total Time</span><span class="font-mono font-bold text-white">1 min 14.3 s</span></div>
+                <div class="p-2.5 rounded-lg bg-white/5"><span class="text-gray-400 block text-[11px]">Laser Light Time</span><span class="font-mono font-bold text-white">28.38 s</span></div>
               </div>
             </div>
-
-            <h3 class="text-lg font-semibold text-white pt-2 flex items-center gap-2">
-              <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i> 4. Result & Problem Solving
-            </h3>
-            <p>
-              During preliminary conversion, duplicate vector contours caused localized over-burning. By manually pruning overlapping paths in Illustrator before exporting to DXF, we eliminated redundant laser passes and achieved clean, frosted white engraving on the transparent acrylic with crisp character clarity.
-            </p>
+            <!-- Fig 3 -->
+            <div class="photo-frame my-5">
+              <img src="assets/WEB FIRE IN THE HOLE IMAGE.jpeg" alt="RDWorks simulation showing 45x45mm size, 1:14.327 total time, 28.384 s light time" loading="lazy" />
+              <span class="photo-caption">Fig 3. RDWorks simulation preview &mdash; artwork 45.0 &times; 45.0 mm &middot; Total time 0:01:14.327 &middot; Light time 0:00:28.384 &middot; Work distance 2838.4 mm.</span>
+            </div>
+            <h3 class="text-lg font-semibold text-white pt-2 flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i> 4. Result &amp; Problem Solving</h3>
+            <p>During preliminary conversion, duplicate vector contours caused localized over-burning. By pruning overlapping paths before exporting to DXF, we eliminated redundant laser passes and achieved clean, frosted white engraving on transparent acrylic with crisp character clarity.</p>
           </div>
-
           <div class="mt-6 p-4 rounded-xl bg-amber-500/10 border-l-4 border-amber-500 text-sm text-amber-200 font-medium">
             <span class="font-bold text-white uppercase tracking-wider block mb-1">Laser Cutting Takeaway:</span>
             "Digital fabrication quality is determined during vector preparation. Clean geometry, closed paths, and calibrated power settings produce crisp physical results."
           </div>
         </section>
 
-        <!-- SEGMENT 2: 3D PRINTING -->
+        <!-- 3D PRINTING -->
         <section class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-300 font-bold border border-cyan-500/30">
-              <i class="fa-solid fa-cubes-stacked text-lg"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-cyan-400 tracking-wider uppercase">Segment 02</span>
-              <h2 class="text-2xl font-display font-bold text-white">3D Printing & Additive Manufacturing</h2>
-            </div>
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-300 border border-cyan-500/30"><i class="fa-solid fa-cubes-stacked text-lg"></i></div>
+            <div><span class="text-xs font-bold text-cyan-400 tracking-wider uppercase">Segment 02</span><h2 class="text-2xl font-display font-bold text-white">3D Printing &amp; Additive Manufacturing</h2></div>
           </div>
-
           <div class="space-y-5 text-gray-300">
-            <h3 class="text-lg font-semibold text-white flex items-center gap-2">
-              <i class="fa-solid fa-shapes text-cyan-400 text-sm"></i> 1. Additive vs. Subtractive Manufacturing
-            </h3>
-            <p>
-              While subtractive CNC machining removes material from a solid billet using rotational cutters (facing severe reach limitations with internal undercuts and organic geometries), <strong>Fused Deposition Modeling (FDM)</strong> constructs complex geometries layer by layer directly from an STL polygon surface mesh.
-            </p>
-
-            <!-- 3D Printer Specs Table -->
+            <h3 class="text-lg font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-shapes text-cyan-400 text-sm"></i> 1. Additive vs. Subtractive Manufacturing</h3>
+            <p>While subtractive CNC machining removes material from a solid billet (facing severe reach limitations with internal undercuts and organic geometries), <strong>Fused Deposition Modeling (FDM)</strong> constructs complex geometries layer by layer directly from an STL polygon surface mesh.</p>
             <div class="overflow-x-auto rounded-xl border border-white/10 my-4">
               <table class="w-full text-left custom-table">
-                <thead>
-                  <tr>
-                    <th>Machine Feature</th>
-                    <th>Bambu Lab H2S Specification</th>
-                  </tr>
-                </thead>
+                <thead><tr><th>Machine Feature</th><th>Bambu Lab H2S Specification</th></tr></thead>
                 <tbody>
-                  <tr>
-                    <td class="font-semibold text-white">Kinematics & Platform</td>
-                    <td class="text-cyan-300 font-mono">CoreXY High-Speed Enclosed FDM</td>
-                  </tr>
-                  <tr>
-                    <td class="font-semibold text-white">Build Volume</td>
-                    <td class="text-cyan-300 font-mono">340 × 320 × 340 mm</td>
-                  </tr>
-                  <tr>
-                    <td class="font-semibold text-white">Nozzle Configuration</td>
-                    <td class="text-cyan-300 font-mono">0.4 mm Hardened-Steel (Max 350 °C)</td>
-                  </tr>
-                  <tr>
-                    <td class="font-semibold text-white">Bed & Thermal Chamber</td>
-                    <td class="text-cyan-300 font-mono">Textured PEI Plate (120 °C) & Active Chamber Heating (65 °C)</td>
-                  </tr>
-                  <tr>
-                    <td class="font-semibold text-white">Slicing Environment</td>
-                    <td class="text-cyan-300 font-mono">Bambu Studio (with automatic tree support calculation)</td>
-                  </tr>
+                  <tr><td class="font-semibold text-white">Kinematics &amp; Platform</td><td class="text-cyan-300 font-mono">CoreXY High-Speed Enclosed FDM</td></tr>
+                  <tr><td class="font-semibold text-white">Build Volume</td><td class="text-cyan-300 font-mono">340 &times; 320 &times; 340 mm</td></tr>
+                  <tr><td class="font-semibold text-white">Nozzle Configuration</td><td class="text-cyan-300 font-mono">0.4 mm Hardened-Steel (Max 350 &deg;C)</td></tr>
+                  <tr><td class="font-semibold text-white">Bed &amp; Thermal Chamber</td><td class="text-cyan-300 font-mono">Textured PEI Plate (120 &deg;C) &amp; Active Chamber Heating (65 &deg;C)</td></tr>
+                  <tr><td class="font-semibold text-white">Slicing Environment</td><td class="text-cyan-300 font-mono">Bambu Studio (with automatic tree support calculation)</td></tr>
                 </tbody>
               </table>
             </div>
-
-            <h3 class="text-lg font-semibold text-white pt-2 flex items-center gap-2">
-              <i class="fa-solid fa-dragon text-purple-400 text-sm"></i> 2. Selected STL Model: Organic Toothless Dragon
-            </h3>
-            <p>
-              We selected an intricate <strong>Toothless dragon model</strong> (bounding envelope <strong>45.7 × 98.7 × 16.2 mm</strong>) featuring sweeping wings, horns, curled tail segments, and subtle overhangs. This model served as a rigorous test for layer stacking, overhang angle thresholds, and support economy.
-            </p>
-
-            <!-- Slicer Settings Grid -->
-            <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 bg-cyan-950/20 my-4">
-              <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
-                <i class="fa-solid fa-sliders text-cyan-400"></i> Calibrated Slicer Parameters in Bambu Studio
-              </h4>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <span class="text-gray-400 block text-[11px]">Layer Height</span>
-                  <span class="font-mono font-bold text-cyan-300">0.20 mm</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <span class="text-gray-400 block text-[11px]">Nozzle Temperature</span>
-                  <span class="font-mono font-bold text-cyan-300">220 °C (PLA)</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <span class="text-gray-400 block text-[11px]">Bed Temperature</span>
-                  <span class="font-mono font-bold text-cyan-300">55 °C</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <span class="text-gray-400 block text-[11px]">Infill Pattern</span>
-                  <span class="font-mono font-bold text-cyan-300">15% Gyroid</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <span class="text-gray-400 block text-[11px]">Wall Loops</span>
-                  <span class="font-mono font-bold text-cyan-300">2 Shells</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <span class="text-gray-400 block text-[11px]">Print Speed</span>
-                  <span class="font-mono font-bold text-cyan-300">200 mm/s</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <span class="text-gray-400 block text-[11px]">Filament Weight</span>
-                  <span class="font-mono font-bold text-cyan-300">8.50 g (Model)</span>
-                </div>
-                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <span class="text-gray-400 block text-[11px]">Print Duration</span>
-                  <span class="font-mono font-bold text-cyan-300">37 min 47 s</span>
-                </div>
+            <h3 class="text-lg font-semibold text-white pt-2 flex items-center gap-2"><i class="fa-solid fa-dragon text-purple-400 text-sm"></i> 2. Selected STL Model: Organic Toothless Dragon</h3>
+            <p>We selected an intricate <strong>Toothless dragon model</strong> (bounding envelope <strong>45.7 &times; 98.7 &times; 16.2 mm</strong>) featuring sweeping wings, horns, curled tail segments, and subtle overhangs &mdash; a rigorous test for layer stacking, overhang thresholds, and support economy.</p>
+            <!-- Fig 4 and 5 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-5">
+              <div>
+                <div class="photo-frame"><img src="assets/Screenshot 2026-10-05 092452.png" alt="Toothless dragon top diagonal view in Bambu Studio slicer" loading="lazy" /></div>
+                <span class="photo-caption">Fig 4. Toothless STL &mdash; top/diagonal view showing wings, head, and segmented tail geometry in Bambu Studio.</span>
+              </div>
+              <div>
+                <div class="photo-frame"><img src="assets/Screenshot 2026-10-05 092421.png" alt="Toothless dragon side profile view in slicer" loading="lazy" /></div>
+                <span class="photo-caption">Fig 5. Side-profile view &mdash; 16.2 mm print height; flat bed orientation chosen to minimize support usage.</span>
               </div>
             </div>
-
-            <h3 class="text-lg font-semibold text-white pt-2 flex items-center gap-2">
-              <i class="fa-solid fa-chart-pie text-emerald-400 text-sm"></i> 3. Quantitative Material & Execution Results
-            </h3>
-            <p>
-              The slicing strategy utilized Gyroid infill for isotropic mechanical integrity without adding excess weight. Automatic supports accounted for only <strong>0.11 g</strong> ($0.04\text{ m}$) of the total $8.62\text{ g}$ extrusion. This minimal support ratio allowed effortless post-processing without surface scarring, while capturing all subtle curvatures on the dragon's head and wings.
-            </p>
+            <!-- Fig 6 -->
+            <div class="photo-frame my-5">
+              <img src="assets/Screenshot 2026-10-01 100423.png" alt="Toothless dragon top-down sliced toolpath view in Bambu Studio" loading="lazy" />
+              <span class="photo-caption">Fig 6. Top-down sliced toolpath view &mdash; layer contours visible across body, wings, and tail after slicing at 0.20 mm layer height with 15% Gyroid infill.</span>
+            </div>
+            <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 bg-cyan-950/20 my-4">
+              <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-sliders text-cyan-400"></i> Calibrated Slicer Parameters in Bambu Studio</h4>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5"><span class="text-gray-400 block text-[11px]">Layer Height</span><span class="font-mono font-bold text-cyan-300">0.20 mm</span></div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5"><span class="text-gray-400 block text-[11px]">Nozzle Temperature</span><span class="font-mono font-bold text-cyan-300">220 &deg;C (PLA)</span></div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5"><span class="text-gray-400 block text-[11px]">Bed Temperature</span><span class="font-mono font-bold text-cyan-300">55 &deg;C</span></div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5"><span class="text-gray-400 block text-[11px]">Infill Pattern</span><span class="font-mono font-bold text-cyan-300">15% Gyroid</span></div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5"><span class="text-gray-400 block text-[11px]">Wall Loops</span><span class="font-mono font-bold text-cyan-300">2 Shells</span></div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5"><span class="text-gray-400 block text-[11px]">Print Speed</span><span class="font-mono font-bold text-cyan-300">200 mm/s</span></div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5"><span class="text-gray-400 block text-[11px]">Filament Weight</span><span class="font-mono font-bold text-cyan-300">8.50 g (Model)</span></div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-white/5"><span class="text-gray-400 block text-[11px]">Print Duration</span><span class="font-mono font-bold text-cyan-300">37 min 47 s</span></div>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold text-white pt-2 flex items-center gap-2"><i class="fa-solid fa-chart-pie text-emerald-400 text-sm"></i> 3. Quantitative Material &amp; Execution Results</h3>
+            <p>The Gyroid infill provided isotropic mechanical integrity without excess weight. Automatic supports consumed only <strong>0.11 g</strong> out of <strong>8.62 g</strong> total extrusion &mdash; a minimal ratio allowing effortless post-processing without surface scarring.</p>
+            <!-- Fig 7 -->
+            <div class="photo-frame my-5">
+              <img src="assets/Screenshot 2026-10-05 112216.png" alt="Bambu Studio slicing result summary showing filament, time and support data" loading="lazy" />
+              <span class="photo-caption">Fig 7. Bambu Studio slicing result &mdash; Model: 2.81 m / 8.50 g &middot; Support: 0.04 m / 0.11 g &middot; Total: 2.84 m / 8.62 g &middot; Prepare: 5m 25s &middot; Print: 32m 21s &middot; Total: 37m 47s.</span>
+            </div>
           </div>
-
           <div class="mt-6 p-4 rounded-xl bg-cyan-500/10 border-l-4 border-cyan-500 text-sm text-cyan-200 font-medium">
             <span class="font-bold text-white uppercase tracking-wider block mb-1">3D Printing Takeaway:</span>
             "Additive manufacturing removes conventional geometric constraints. Smart orientation and minimal support usage make complex organic prototyping fast and sustainable."
           </div>
         </section>
 
-        <!-- Summary & Landing -->
+        <!-- Summary -->
         <section class="glass-card p-6 sm:p-10 rounded-2xl border border-brand-500/40 bg-gradient-to-br from-brand-900/30 to-purple-900/30 text-center">
-          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 text-2xl shadow-lg border border-purple-500/30">
-            ⚡
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mb-4">
-            WEEK 6 — DIGITAL FABRICATION SYNTHESIS
-          </h2>
-          <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm sm:text-base">
-            Week 6 bridged the gap between pure digital design and physical prototyping.
-          </p>
-
-          <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">
-            Whether preparing 2D vector toolpaths for the FORGE 1490 CO₂ laser or slicing 3D polygon meshes in Bambu Studio for high-speed CoreXY printing — digital fabrication empowers rapid iteration, material understanding, and tangible problem-solving.
-          </p>
-
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 text-2xl shadow-lg border border-purple-500/30">&#9889;</div>
+          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mb-4">WEEK 6 &mdash; DIGITAL FABRICATION SYNTHESIS</h2>
+          <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm sm:text-base">Week 6 bridged the gap between pure digital design and physical prototyping.</p>
+          <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">Whether preparing 2D vector toolpaths for the FORGE 1490 CO&#8322; laser or slicing 3D polygon meshes in Bambu Studio for high-speed CoreXY printing &mdash; digital fabrication empowers rapid iteration, material understanding, and tangible problem-solving.</p>
           <div class="inline-block p-4 rounded-2xl bg-purple-600/30 border border-purple-400/40 text-purple-100 font-bold text-base shadow-xl">
-            "From digital vector lines to high-energy laser beams, and from 3D meshes to layer-by-layer extrusion — digital fabrication turns imagination into physical reality."
+            "From digital vector lines to high-energy laser beams, and from 3D meshes to layer-by-layer extrusion &mdash; digital fabrication turns imagination into physical reality."
           </div>
         </section>
 
-        <!-- Week Navigation Links -->
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10">
           <a href="week-02.html" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-all text-sm font-semibold flex items-center justify-center gap-2">
-            <i class="fa-solid fa-arrow-left text-xs"></i>
-            <span>Previous: Week 02 Journal</span>
+            <i class="fa-solid fa-arrow-left text-xs"></i><span>Previous: Week 02 Journal</span>
           </a>
           <a href="index.html#protosem" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-brand-600/30 hover:bg-brand-600 border border-brand-500/40 text-brand-200 hover:text-white transition-all text-sm font-semibold flex items-center justify-center gap-2">
-            <span>Back to Timeline</span>
-            <i class="fa-solid fa-arrow-up text-xs"></i>
+            <span>Back to Timeline</span><i class="fa-solid fa-arrow-up text-xs"></i>
           </a>
         </div>
 
       </div>
-
     </div>
-
   </main>
 
-  <!-- Footer -->
   <footer class="relative z-10 border-t border-white/10 py-8 text-center text-xs text-gray-500">
     <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
-      <div class="flex items-center gap-2">
-        <span class="text-gray-300 font-semibold">Harshini Visakai R K</span>
-      </div>
+      <span class="text-gray-300 font-semibold">Harshini Visakai R K</span>
       <div>PRICE ProtoSem &bull; Phase 02 &bull; Week 06</div>
     </div>
   </footer>
-
 </body>
 </html>
